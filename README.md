@@ -22,31 +22,36 @@ This repository displays my data science and machine learning projects, highligh
 In this repository, you will find a collection of data science and machine learning projects that I have worked on during my academic journey. These projects demonstrate my skills and expertise in various areas of data science and machine learning, including data analysis, data visualization, model development, and more.
 
 ## About Me
-
-  ### Contact Information
-    ###Email: 
+   ### Profile
+   Conor Brooke
+   Bachelor of Science (Honours) in Software Development 
+   
+   ### Contact Information
+    Email: conorbrooke19@gmail.com
+    SETU Email: c00260735@setu.ie
+    Contact Number: 089 4335795
 
 ## Project Portfolio
 
 ### Project 1: Title
 
 - Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/yourusername/project1)
-- Live Demo: [Link to Live Demo](https://www.example.com/project1)
+- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- Live Demo: [Link to Live Demo](https://www.youtube.com/)
 - Technologies Used: List of technologies used in the project.
 
 ### Project 2: Title
 
 - Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/yourusername/project2)
-- Live Demo: [Link to Live Demo](https://www.example.com/project2)
+- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- Live Demo: [Link to Live Demo](https://www.youtube.com/)
 - Technologies Used: List of technologies used in the project.
 
 ### Project 3: Title
 
 - Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/yourusername/project3)
-- Live Demo: [Link to Live Demo](https://www.example.com/project3)
+- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- Live Demo: [Link to Live Demo](https://www.youtube.com/)
 - Technologies Used: List of technologies used in the project.
 
 ## Technologies Used
@@ -63,8 +68,5 @@ Provide instructions on how to run the projects locally if applicable.
 
 ## Contributors
 
-- [Your Name](https://github.com/yourusername) - Main contributor
+- [Conor Brooke](https://github.com/conorbrooke77) - Main contributor
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
