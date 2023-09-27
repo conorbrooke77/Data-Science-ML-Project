@@ -23,12 +23,12 @@ In this repository, you will find a collection of data science and machine learn
 
 ## About Me
    ### Profile
-   Conor Brooke  
-   Bachelor of Science (Honours) in Software Development 
+   - **Name:** Conor Brooke 
+   - **Academic Qualifications:** Bachelor of Science in Software Development 
    
    ### Contact Information
-   Email: conorbrooke19@gmail.com  
-   SETU Email: c00260735@setu.ie  
+   - **Email:** c00260735@setu.ie
+   - **GitHub:** [GitHub Profile](https://github.com/conorbrooke77)
 
 
 ## Project Portfolio
