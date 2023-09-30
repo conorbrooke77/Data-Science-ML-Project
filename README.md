@@ -9,7 +9,7 @@ This repository displays my data science and machine learning projects, highligh
 1. [Introduction](#introduction)
 2. [About Me](#about-me)
 3. [Project Portfolio](#project-portfolio)
-   - [Project 1: Title](#project-1-title)
+   - [Project 1: Predictive Analysis on Healthcare Data](#project-1-title)
    - [Project 2: Title](#project-2-title)
    - [Project 3: Title](#project-3-title)
 4. [Technologies Used](#technologies-used)
@@ -39,6 +39,8 @@ In this repository, you will find a collection of data science and machine learn
 - **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
 - **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
 - **Technologies Used**: Examples: Python, TensorFlow, Matplotlib, Scikit-Learn.
+- **Techniques Applied**: 
+  - **Data Processing Techniques**: E.g., normalization, encoding, etc.
 - **Opportunities from the Project**: 
   - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
   - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
@@ -55,6 +57,12 @@ In this repository, you will find a collection of data science and machine learn
   <br>
   <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
   <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
+  
+- **Ethical Considerations**: 
+  Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
+
+- **Regulations and Compliance**:
+  - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
 
 ### Project 2: Title
 
