@@ -7,15 +7,16 @@ This repository displays my data science and machine learning projects, highligh
 ### Table of Contents
 
 1. [Introduction](#introduction)
-2. [About Me](#about-me)
-3. [Project Portfolio](#project-portfolio)
+2. [Background](#background)
+3. [About Me](#about-me)
+4. [Project Portfolio](#project-portfolio)
    - [Project 1: Predictive Analysis on Healthcare Data](#project-1-predictive-analysis-on-healthcare-data)
    - [Project 2: Real-time Tweet Sentiment Analysis](#project-2-real-time-tweet-sentiment-analysis)
    - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-match-outcome-predictions-&-player-statistics)
-4. [All Technologies Used](#all-technologies-used)
-5. [How to Run](#how-to-run)
-6. [Portfolio Specification](#portfolio-specification)
-7. [Contributors](#contributors)
+5. [All Technologies Used](#all-technologies-used)
+6. [How to Run](#how-to-run)
+7. [Portfolio Specification](#portfolio-specification)
+8. [Contributors](#contributors)
 
 ## Introduction
 
