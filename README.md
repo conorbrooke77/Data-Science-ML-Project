@@ -11,7 +11,7 @@ This repository displays my data science and machine learning projects, highligh
 3. [Project Portfolio](#project-portfolio)
    - [Project 1: Predictive Analysis on Healthcare Data](#project-1-predictive-analysis-on-healthcare-data)
    - [Project 2: Real-time Tweet Sentiment Analysis](#project-2-real-time-tweet-sentiment-analysis)
-   - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-rwc-match-outcome-predictions-&-player-statistics)
+   - [Project 3: Rugby World Cup Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-match-outcome-predictions-&-player-statistics)
 4. [All Technologies Used](#all-technologies-used)
 5. [How to Run](#how-to-run)
 6. [Portfolio Specification](#portfolio-specification)
@@ -95,7 +95,7 @@ In this repository, you will find a collection of data science and machine learn
 - **Regulations and Compliance**:
   - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
 
-### Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics
+### Project 3: Rugby World Cup Match Outcome Predictions & Player Statistics
 
 - **Description**: A brief description of the project.
 - **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
