@@ -21,6 +21,14 @@ This repository displays my data science and machine learning projects, highligh
 
 In this repository, you will find a collection of data science and machine learning projects that I have worked on during my academic journey. These projects demonstrate my skills and expertise in various areas of data science and machine learning, including data analysis, data visualization, model development, and more.
 
+## Background
+
+In this section, you would:
+
+- **Significance of the Portfolio**: Explain why showcasing your projects is essential. This could relate to demonstrating understanding in modern tools and techniques.
+
+- **Purpose**: Describe what readers should expect from the portfolio.
+
 ## About Me
    ### Profile
    - **Name:** Conor Brooke 
