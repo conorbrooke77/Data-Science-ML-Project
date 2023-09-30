@@ -10,8 +10,8 @@ This repository displays my data science and machine learning projects, highligh
 2. [About Me](#about-me)
 3. [Project Portfolio](#project-portfolio)
    - [Project 1: Predictive Analysis on Healthcare Data](#project-1-predictive-analysis-on-healthcare-data)
-   - [Project 2: Title](#project-2-title)
-   - [Project 3: Title](#project-3-title)
+   - [Project 2: Real-time Tweet Sentiment Analysis](#project-2-real-time-tweet-sentiment-analysis)
+   - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-(RWC)-match-outcome-predictions-&-player-statistics)
 4. [All Technologies Used](#all-technologies-used)
 5. [How to Run](#how-to-run)
 6. [Portfolio Specification](#portfolio-specification)
@@ -64,19 +64,67 @@ In this repository, you will find a collection of data science and machine learn
 - **Regulations and Compliance**:
   - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
 
-### Project 2: Title
+### Project 2: Real-time Tweet Sentiment Analysis 
 
-- Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
-- Live Demo: [Link to Live Demo](https://www.youtube.com/)
-- Technologies Used: List of technologies used in the project.
+- **Description**: A brief description of the project.
+- **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
+- **Technologies Used**: Examples: Python, Scikit-Learn, Pandas, Matplotlib, StatsBomb.
+- **Techniques Applied**: 
+  - **Data Processing Techniques**: E.g., normalization, encoding, etc.
+- **Opportunities from the Project**: 
+  - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
+  - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
+  - **Skills Acquired**: Highlight any particular skills or concepts you learned or refined during the project.
 
-### Project 3: Title
+- **Challenges Faced**: 
+  - **Data Challenges**: Discuss issues related to data quality, imbalances, missing values, etc.
+  - **Modeling Roadblocks**: Highlight any difficulties in model selection, training, or performance.
+  - **Implementation Barriers**: Mention if there were any challenges in integrating your model with applications or other systems.
+  - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
 
-- Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
-- Live Demo: [Link to Live Demo](https://www.youtube.com/)
-- Technologies Used: List of technologies used in the project.
+- **Sample Screenshots**:
+  Below are sample visualizations generated from the project:  <br>
+  <br>
+  <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
+  <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
+  
+- **Ethical Considerations**: 
+  Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
+
+- **Regulations and Compliance**:
+  - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
+
+### Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics
+
+- **Description**: A brief description of the project.
+- **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
+- **Technologies Used**: Examples: Python, Scikit-Learn, Pandas, BeautifulSoup (for web scraping).
+- **Techniques Applied**: 
+  - **Data Processing Techniques**: E.g., normalization, encoding, etc.
+- **Opportunities from the Project**: 
+  - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
+  - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
+  - **Skills Acquired**: Highlight any particular skills or concepts you learned or refined during the project.
+
+- **Challenges Faced**: 
+  - **Data Challenges**: Discuss issues related to data quality, imbalances, missing values, etc.
+  - **Modeling Roadblocks**: Highlight any difficulties in model selection, training, or performance.
+  - **Implementation Barriers**: Mention if there were any challenges in integrating your model with applications or other systems.
+  - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
+
+- **Sample Screenshots**:
+  Below are sample visualizations generated from the project:  <br>
+  <br>
+  <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
+  <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
+  
+- **Ethical Considerations**: 
+  Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
+
+- **Regulations and Compliance**:
+  - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
 
 ## All Technologies Used
 
