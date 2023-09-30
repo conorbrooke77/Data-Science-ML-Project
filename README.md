@@ -51,7 +51,7 @@ In this repository, you will find a collection of data science and machine learn
   - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
 
 - **Sample Screenshots**:
-  Below are sample visualizations generated from the project:  <br>
+  Below are sample visualizations generated from the project:  <br><br>
   <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
   <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
 
