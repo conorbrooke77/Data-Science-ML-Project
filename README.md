@@ -12,7 +12,7 @@ This repository displays my data science and machine learning projects, highligh
    - [Project 1: Predictive Analysis on Healthcare Data](#project-1-title)
    - [Project 2: Title](#project-2-title)
    - [Project 3: Title](#project-3-title)
-4. [Technologies Used](#technologies-used)
+4. [All Technologies Used](#all-technologies-used)
 5. [How to Run](#how-to-run)
 6. [Portfolio Specification](#portfolio-specification)
 7. [Contributors](#contributors)
