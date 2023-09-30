@@ -52,8 +52,8 @@ In this repository, you will find a collection of data science and machine learn
 
 - **Sample Screenshots**:
   Below are sample visualizations generated from the project:
-  ![Visualization1](https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png)
-  ![Visualization2](https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp)
+  <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
+  <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
 
 ### Project 2: Title
 
