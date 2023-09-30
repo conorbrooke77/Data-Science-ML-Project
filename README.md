@@ -86,8 +86,8 @@ In this repository, you will find a collection of data science and machine learn
 - **Sample Screenshots**:
   Below are sample visualizations generated from the project:  <br>
   <br>
-  <img src="[https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png](https://raw.githubusercontent.com/Arnab-Rajkhowa/Twitter-Sentiment-Analysis/master/tweet-dashboard.PNG)" alt="Visualization1" width="380" height="200">
-  <img src="[https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp](https://miro.medium.com/v2/resize:fit:1400/1*AK0caqDJhnjt_PIihy5Ebw.png)" alt="Visualization2" width="380" height="200">
+  <img src="https://raw.githubusercontent.com/Arnab-Rajkhowa/Twitter-Sentiment-Analysis/master/tweet-dashboard.PNG" alt="Visualization1" width="380" height="200">
+  <img src="https://miro.medium.com/v2/resize:fit:1400/1*AK0caqDJhnjt_PIihy5Ebw.png" alt="Visualization2" width="380" height="200">
   
 - **Ethical Considerations**: 
   Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
@@ -117,8 +117,8 @@ In this repository, you will find a collection of data science and machine learn
 - **Sample Screenshots**:
   Below are sample visualizations generated from the project:  <br>
   <br>
-  <img src="[https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png](https://images.theconversation.com/files/545652/original/file-20230830-15-fd91hb.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip)" alt="Visualization1" width="380" height="200">
-  <img src="[https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp](https://images.theconversation.com/files/545680/original/file-20230831-19-uxyx75.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip)" alt="Visualization2" width="380" height="200">
+  <img src="https://images.theconversation.com/files/545652/original/file-20230830-15-fd91hb.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip" alt="Visualization1" width="380" height="200">
+  <img src="https://images.theconversation.com/files/545680/original/file-20230831-19-uxyx75.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip" alt="Visualization2" width="380" height="200">
   
 - **Ethical Considerations**: 
   Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
