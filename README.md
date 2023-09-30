@@ -33,12 +33,27 @@ In this repository, you will find a collection of data science and machine learn
 
 ## Project Portfolio
 
-### Project 1: Title
+### Project 1: Predictive Analysis on Healthcare Data
 
-- Description: A brief description of the project.
-- GitHub Repository: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
-- Live Demo: [Link to Live Demo](https://www.youtube.com/)
-- Technologies Used: List of technologies used in the project.
+- **Description**: A brief description of the project.
+- **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
+- **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
+- **Technologies Used**: Examples: Python, TensorFlow, Matplotlib, Scikit-Learn.
+- **Opportunities from the Project**: 
+  - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
+  - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
+  - **Skills Acquired**: Highlight any particular skills or concepts you learned or refined during the project.
+
+- **Challenges Faced**: 
+  - **Data Challenges**: Discuss issues related to data quality, imbalances, missing values, etc.
+  - **Modeling Roadblocks**: Highlight any difficulties in model selection, training, or performance.
+  - **Implementation Barriers**: Mention if there were any challenges in integrating your model with applications or other systems.
+  - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
+
+- **Sample Screenshots**:
+  Below are sample visualizations generated from the project:
+  ![Visualization1](https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png)
+  ![Visualization2](https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp)
 
 ### Project 2: Title
 
@@ -54,7 +69,7 @@ In this repository, you will find a collection of data science and machine learn
 - Live Demo: [Link to Live Demo](https://www.youtube.com/)
 - Technologies Used: List of technologies used in the project.
 
-## Technologies Used
+## All Technologies Used
 
 - List the key technologies and tools you have used in your projects.
 
