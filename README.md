@@ -42,36 +42,69 @@ In this section, you would:
 
 ## Project Portfolio
 
-### Project 1: Predictive Analysis on Healthcare Data
+# Project 1: Predicting Sleep Stages using Fitbit Data
 
-- **Description**: A brief description of the project.
-- **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
-- **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
-- **Technologies Used**: Examples: Python, TensorFlow, Matplotlib, Scikit-Learn.
-- **Techniques Applied**: 
-  - **Data Processing Techniques**: E.g., normalization, encoding, etc.
-- **Opportunities from the Project**: 
-  - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
-  - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
-  - **Skills Acquired**: Highlight any particular skills or concepts you learned or refined during the project.
+## Description:
+A machine learning project aimed at predicting sleep stages (deep, light, REM, awake) based on minute-level heart rate and physical activity data collected from Fitbit devices. The project explores the relationship between daily activities, heart rate patterns, and sleep quality, aiming to provide insights into factors affecting sleep and potential recommendations for improving sleep quality.
 
-- **Challenges Faced**: 
-  - **Data Challenges**: Discuss issues related to data quality, imbalances, missing values, etc.
-  - **Modeling Roadblocks**: Highlight any difficulties in model selection, training, or performance.
-  - **Implementation Barriers**: Mention if there were any challenges in integrating your model with applications or other systems.
-  - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
+## Technologies Used:
+- Python
+- Pandas
+- Scikit-Learn
+- (TensorFlow or PyTorch if deep learning models are employed)
 
-- **Sample Screenshots**:
-  Below are sample visualizations generated from the project:  <br>
-  <br>
-  <img src="https://cdn.sisense.com/wp-content/uploads/cost-of-admissions-line-chart.png" alt="Visualization1" width="380" height="200">
-  <img src="https://tateeda.com/wp-content/webp-express/webp-images/uploads/2023/01/Tateeda-vaccination-graph-2-1024x700.jpg.webp" alt="Visualization2" width="380" height="200">
-  
-- **Ethical Considerations**: 
-  Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
+## Techniques Applied:
+- Data Cleaning and Preprocessing
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning Modeling (classification)
+- Model Evaluation and Hyperparameter Tuning
 
-- **Regulations and Compliance**:
-  - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
+## Data Processing Techniques:
+- Normalization (Scaling features to a similar range)
+- Encoding (Transforming categorical variables into numerical representations)
+- Handling missing values (imputation, deletion, etc.)
+- Aggregation (Creating daily summaries from minute-level data, if necessary)
+
+## Opportunities from the Project:
+
+### New Technologies Learned:
+- Exploration of advanced machine learning libraries (if any)
+- Understanding and applying time-series analysis techniques (if applicable)
+
+### Datasets Explored:
+- Fitbit's minute-level heart rate and physical activity data
+- Investigating the challenges and intricacies of health-related time-series data
+
+### Skills Acquired:
+- Data cleaning and preprocessing
+- Time-series analysis
+- Machine learning model development, evaluation, and tuning
+
+## Challenges Faced:
+
+### Data Challenges:
+- Merging datasets with different granularity and identifiers
+- Handling missing or inconsistent data
+
+### Modeling Roadblocks:
+- Selecting the appropriate machine learning models for multi-class classification
+- Balancing the dataset if there's class imbalance among sleep stages
+
+### Implementation Barriers:
+- Integrating the predictive model into a user-friendly interface (if applicable)
+
+### Conceptual Hurdles:
+- Understanding the physiological factors affecting sleep stages
+- Interpreting the model's predictions in a meaningful way
+
+## Sample Screenshots:
+Visualization1: (e.g., Distribution of sleep stages)
+Visualization2: (e.g., Heart rate patterns across different sleep stages)
+
+## Ethical Considerations:
+- Ensuring the privacy and anonymity of individuals whose data was used
+- Understanding the limitations of the model and the potential implications of its predictions on individual's sleep health recommendations
 
 ### Project 2: Real-time Tweet Sentiment Analysis 
 
