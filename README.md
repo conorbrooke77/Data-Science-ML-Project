@@ -51,13 +51,13 @@ This project aims to predict sleep stages using data from Fitbit wearables. The 
 ### Dataset
 **FitBit Fitness Tracker Data:** [Kaggle](https://www.kaggle.com/datasets/arashnic/fitbit/data)
 
-Below are the total rows of each dataset used: 
+Below are the total rows of each dataset used:  
 
-`heartrate_seconds_num_rows = 2483658`
+`heartrate_seconds_num_rows = 2483658`  
 
-`minuteSleep_num_rows = 188521`
+`minuteSleep_num_rows = 188521`  
 
-`minuteSteps_num_rows= 1325580`
+`minuteSteps_num_rows= 1325580`  
     
 ### Technologies Used
 - Python
