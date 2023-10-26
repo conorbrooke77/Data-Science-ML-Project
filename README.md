@@ -104,7 +104,7 @@ Below are the total rows of each dataset used:
 
 #### 2. Exploratory Data Analysis (EDA)
 
-- **Visualization of Heart Rate Data**
+- **Visualization of Heart Rate Data Per Hour Over a Month Period**
     ```python
     plt.figure(figsize=(15, 7))
     for individual in sampled_individuals:
@@ -115,7 +115,45 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-    *INSERT VISUALIZATION HERE*
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/tree/Data-Science-ML-Project/Average-Heart-Rate-Per-Hour-for-Sampled-Individuals.png?raw=true)  
+
+    **Basic Statistical Summary for Sampled Individuals:**
+
+    Mean (Average) Heart Rate: 69.52 beats per minute
+    Standard Deviation: 15.19
+    Minimum Heart Rate: 36.8 beats per minute
+    Maximum Heart Rate: 187.0 beats per minute
+    Median (50th percentile) Heart Rate: 66.42857142857143 beats per minute
+    25th Percentile: 59.40 beats per minute
+    75th Percentile: 75.80 beats per minute
+
+- **Visualization of Heart Rate Data Per Hour For A Sample User**
+    ```python
+    # Filter for a specific date for Joe
+    specific_date = "2016-04-13"
+    joe_data = hourly_data[(hourly_data['Names'] == 'Joe') & (hourly_data['Date'] == specific_date)]
+
+    # Plotting the data for Joe
+    plt.figure(figsize=(15, 7))
+    plt.plot(pd.to_datetime(joe_data['Date'].astype(str) + ' ' + joe_data['Hour'].astype(str) + ':00:00'), 
+    joe_data['Avg Heart Rate Per Minute'], 
+    label='Joe', color='blue')
+    ```
+    This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
+
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/tree/Data-Science-ML-Project/Joe-Daily-Heart-Rate-analysis.png?raw=true)  
+
+    **Basic Statistical Summary for Joe on 2016-04-13:**
+
+    Mean (Average) Heart Rate**: 60.59 beats per minute
+    Standard Deviation: 4.33
+    Minimum Heart Rate: 51.775370370370375 beats per minute
+    Maximum Heart Rate: 68.47461640211641 beats per minute
+    Median (50th percentile) Heart Rate: 61.51015512265512 beats per minute
+    25th Percentile: 57.65 beats per minute
+    75th Percentile: 63.30 beats per minute
+
+
 
 #### 3. Feature Engineering
 
