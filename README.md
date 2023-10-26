@@ -169,6 +169,9 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 ### Challenges Faced
 
 - Merging posed challenges due to the extensive dataset sizes, had many problems finding ways to merge data beneficially while staying coherent.
+- Due to merging challenges and the limited number of participants, establishing a connection between the heart rate and sleep stages data proved to be incredibly frustrating.
+- The MinuteSleep data was hard to differentiate between daytime and nighttime hours, making it either inaccurate or I struggled to interpret it correctly.
+- Formatting on the steps data was also a challenge to interpret, along with having what seemed like a pointless column.
 - Differing granularities between datasets causing resampling of datasets.
 - The dataset's potential biases came from a limited participant count and third-party collection methods, eventhough datasets are large the data stays quite consistent.
 
