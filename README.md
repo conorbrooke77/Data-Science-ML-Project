@@ -169,7 +169,7 @@ Below are the total rows of each dataset used:
     plt.xlabel('Sleep Stage')
     plt.show()
     ```
-    This code was used to generate a visualization of Sleep Stages Distribution.
+    This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
 
     ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
 
@@ -199,13 +199,12 @@ Below are the total rows of each dataset used:
     minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
     ```
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
-
 - **Calculating Sleep Duration per Sleep Stage**
     ```python
     minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
     sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
     ```
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
 
 - **Understanding Sleep Data Consistency**
     ```python
@@ -215,6 +214,9 @@ Below are the total rows of each dataset used:
     # Calculate the percentage
     sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
     ```
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
+
+    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month
 
 ### Data Processing Techniques
 
@@ -264,14 +266,14 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 
 Haven't begun modeling for Iteration 1.
 
-## Conceptual Hurdles
+### Conceptual Hurdles
 
 - Have to get a better grasp on the aspects influencing sleep stages.
 - Understading the relationship between heart rate and sleep aswell as physical activity on sleep, especially considering the inconsistencies present in the sleep data.
 
 
 
-### Project 2: Real-time Tweet Sentiment Analysis 
+## Project 2: Real-time Tweet Sentiment Analysis 
 
 - **Description**: A brief description of the project.
 - **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
