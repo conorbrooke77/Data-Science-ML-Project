@@ -216,7 +216,9 @@ Below are the total rows of each dataset used:
     ```
     ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
 
-    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month
+    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
+    FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
+
 
 ### Data Processing Techniques
 
@@ -271,6 +273,15 @@ Haven't begun modeling for Iteration 1.
 - Have to get a better grasp on the aspects influencing sleep stages.
 - Understading the relationship between heart rate and sleep aswell as physical activity on sleep, especially considering the inconsistencies present in the sleep data.
 
+### Conclusion
+
+I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
+
+The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
+
+Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
+
+Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
 
 ## Project 2: Real-time Tweet Sentiment Analysis 
