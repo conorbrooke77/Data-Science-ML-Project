@@ -42,69 +42,88 @@ In this section, you would:
 
 ## Project Portfolio
 
-# Project 1: Predicting Sleep Stages using Fitbit Data
+## Project 1: Predicting Sleep Stages using Fitbit Data
 
-## Description:
-A machine learning project aimed at predicting sleep stages (deep, light, REM, awake) based on minute-level heart rate and physical activity data collected from Fitbit devices. The project explores the relationship between daily activities, heart rate patterns, and sleep quality, aiming to provide insights into factors affecting sleep and potential recommendations for improving sleep quality.
+### Description
 
-## Technologies Used:
+This project aims to predict sleep stages using data from Fitbit wearables. The Fitbit dataset contains records of 30 participants, including metrics like heart rate recorded every second, sleep metrics recorded every minute, and steps metrics. This study focuses on analyzing the heart rate and its relation to sleep stages to make effective predictions.
+
+### Technologies Used
 - Python
 - Pandas
-- Scikit-Learn
-- (TensorFlow or PyTorch if deep learning models are employed)
+- Matplotlib (for visualization)
 
-## Techniques Applied:
-- Data Cleaning and Preprocessing
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Machine Learning Modeling (classification)
-- Model Evaluation and Hyperparameter Tuning
+### Techniques Applied and How They Were Used
 
-## Data Processing Techniques:
-- Normalization (Scaling features to a similar range)
-- Encoding (Transforming categorical variables into numerical representations)
-- Handling missing values (imputation, deletion, etc.)
-- Aggregation (Creating daily summaries from minute-level data, if necessary)
+#### 1. Data Cleaning and Preprocessing
 
-## Opportunities from the Project:
+- **Null Value and Data Type Check**
+    ```python
+    # Checked for any Null values and inconsistent datatypes across all datasets
+    ```
 
-### New Technologies Learned:
-- Exploration of advanced machine learning libraries (if any)
-- Understanding and applying time-series analysis techniques (if applicable)
+- **Datetime Formatting**
+    ```python
+    minuteSleep['date'] = pd.to_datetime(minuteSleep['date'], format='%m/%d/%Y %I:%M:%S %p')
+    heartrate_seconds['Time'] = pd.to_datetime(heartrate_seconds['Time'], format='%m/%d/%Y %I:%M:%S %p')
+    minuteSteps['ActivityMinute'] = pd.to_datetime(minuteSteps['ActivityMinute'], format='%m/%d/%Y %I:%M:%S %p')
+    ```
+    Datetime columns were converted to a consistent format for easier handling and manipulation.
 
-### Datasets Explored:
-- Fitbit's minute-level heart rate and physical activity data
-- Investigating the challenges and intricacies of health-related time-series data
+- **Column Renaming**
+    ```python
+    heartrate_seconds.rename(columns={'Time': 'date'}, inplace=True)
+    minuteSteps.rename(columns={'ActivityMinute': 'date'}, inplace=True)
+    heartrate_seconds.rename(columns={'Value': 'Heart Rate'}, inplace=True)
+    minuteSleep.rename(columns={'value': 'SleepStage'}, inplace=True)
+    ```
+    Columns were renamed to maintain consistency and clarity across datasets.
 
-### Skills Acquired:
-- Data cleaning and preprocessing
-- Time-series analysis
-- Machine learning model development, evaluation, and tuning
+- **Data Resampling**
+    ```python
+    heartrate_minutes = (
+        heartrate_seconds
+        .groupby(['Id', heartrate_seconds['date'].dt.floor('T')]) 
+        .agg({'Heart Rate': 'mean'})
+        .reset_index()
+    )
+    ```
+    Heart rate data was resampled from seconds to minutes granularity to reduce dataset size and improve manageability.
 
-## Challenges Faced:
+#### 2. Exploratory Data Analysis (EDA)
 
-### Data Challenges:
-- Merging datasets with different granularity and identifiers
-- Handling missing or inconsistent data
+- **Visualization of Heart Rate Data**
+    ```python
+    plt.figure(figsize=(15, 7))
+    for individual in sampled_individuals:
+        individual_data = hourly_data[hourly_data['Names'] == individual]
+        plt.plot(pd.to_datetime(individual_data['Date'].astype(str) + ' ' + individual_data['Hour'].astype(str) + ':00:00'), 
+                 individual_data['Avg Heart Rate Per Minute'], 
+                 label=individual)
+    ```
+    This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-### Modeling Roadblocks:
-- Selecting the appropriate machine learning models for multi-class classification
-- Balancing the dataset if there's class imbalance among sleep stages
+    *INSERT VISUALIZATION HERE*
 
-### Implementation Barriers:
-- Integrating the predictive model into a user-friendly interface (if applicable)
+#### 3. Feature Engineering
 
-### Conceptual Hurdles:
-- Understanding the physiological factors affecting sleep stages
-- Interpreting the model's predictions in a meaningful way
+- **Time Data Splitting**
+    ```python
+    heartrate_minutes_split_time = heartrate_minutes['DateTime'].str.split(' ', expand=True)
+    ```
+    The DateTime column was split into separate date and time components for more granular analysis.
 
-## Sample Screenshots:
-Visualization1: (e.g., Distribution of sleep stages)
-Visualization2: (e.g., Heart rate patterns across different sleep stages)
+- **Usernames Association**
+    ```python
+    heartrate_minutes['Names'] = heartrate_minutes['Id'].map(id_to_name)
+    ```
+    Random names were associated with user IDs for clearer and more human-readable data visualization.
 
-## Ethical Considerations:
-- Ensuring the privacy and anonymity of individuals whose data was used
-- Understanding the limitations of the model and the potential implications of its predictions on individual's sleep health recommendations
+    *INSERT VISUALIZATION HERE*
+
+...
+
+
 
 ### Project 2: Real-time Tweet Sentiment Analysis 
 
