@@ -276,11 +276,8 @@ Haven't begun modeling for Iteration 1.
 ### Disappointing Conclusion
 
 I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
-
 The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
-
 Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
-
 Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
 
