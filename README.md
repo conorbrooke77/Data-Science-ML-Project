@@ -91,6 +91,11 @@ Below are the total rows of each dataset used:
     ```
     Columns were renamed to maintain consistency and clarity across datasets.
 
+- **Column Removal**
+    ```python
+    minuteSleep.drop(columns=['logId'], inplace=True)
+    ```
+
 - **Data Resampling**
     ```python
     heartrate_minutes = (
@@ -153,6 +158,20 @@ Below are the total rows of each dataset used:
     25th Percentile: 57.65 beats per minute  
     75th Percentile: 63.30 beats per minute  
 
+- **Visualization of Sleep Stages Distribution**
+    ```python
+    total_minutes_per_stage = sleep_duration.groupby('SleepStage')['Duration_minutes'].sum()
+    total_minutes = total_minutes_per_stage.sum()
+    percentage_per_stage = (total_minutes_per_stage / total_minutes) * 100
+    percentage_per_stage.plot(kind='bar', color=['blue', 'green', 'red'])
+    plt.title('Percentage of Time Spent in Each Sleep Stage')
+    plt.ylabel('Percentage (%)')
+    plt.xlabel('Sleep Stage')
+    plt.show()
+    ```
+    This code was used to generate a visualization of Sleep Stages Distribution.
+
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
 
 
 #### 3. Feature Engineering
@@ -169,7 +188,33 @@ Below are the total rows of each dataset used:
     ```
     Random names were associated with user IDs for clearer and more human-readable data visualization.
 
-    *INSERT VISUALIZATION HERE*
+- **Sleep Stage Mapping for Readability**
+    ```python
+    sleep_stages = {
+        1: 'Awake',
+        2: 'REM',
+        3: 'Deep Sleep'
+    }
+    # Apply the mapping to the 'SleepStage' column
+    minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
+    ```
+
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true) 
+
+- **Calculating Sleep Duration per Sleep Stage**
+    ```python
+    minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
+    sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
+    ```
+
+- **Understanding Sleep Data Consistency**
+    ```python
+    total_sleep = minuteSleepCopy.groupby(['Id', 'day']).size().reset_index(name='Total_minutes')
+    # Merge total_sleep with sleep_duration
+    sleep_duration = sleep_duration.merge(total_sleep, on=['Id', 'day'])
+    # Calculate the percentage
+    sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
+    ```
 
 ### Data Processing Techniques
 
@@ -212,6 +257,8 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 - Formatting on the steps data was also a challenge to interpret, along with having what seemed like a pointless column.
 - Differing granularities between datasets causing resampling of datasets.
 - The dataset's potential biases came from a limited participant count and third-party collection methods, eventhough datasets are large the data stays quite consistent.
+- The MinuteSleep data, based on the percentage analysis, is inconsistent and inaccurate. This has led to challenges in interpreting the data correctly.
+- In-depth analysis of sleep stages showed that users spent an unusually high percentage of time being "Awake", raising concerns about the reliability of this dataset.
 
 ### Modeling Roadblocks
 
