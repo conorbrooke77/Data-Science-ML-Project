@@ -123,7 +123,7 @@ Below are the total rows of each dataset used:
     Standard Deviation: 15.19  
     Minimum Heart Rate: 36.8 beats per minute  
     Maximum Heart Rate: 187.0 beats per minute  
-    Median (50th percentile) Heart Rate: 66.42857142857143 beats per minute  
+    Median (50th percentile) Heart Rate: 66.43 beats per minute  
     25th Percentile: 59.40 beats per minute  
     75th Percentile: 75.80 beats per minute  
 
@@ -145,11 +145,11 @@ Below are the total rows of each dataset used:
 
     **Basic Statistical Summary for Joe on 2016-04-13:**
 
-    Mean (Average) Heart Rate**: 60.59 beats per minute  
+    Mean (Average) Heart Rate: 60.59 beats per minute  
     Standard Deviation: 4.33  
-    Minimum Heart Rate: 51.775370370370375 beats per minute  
-    Maximum Heart Rate: 68.47461640211641 beats per minute  
-    Median (50th percentile) Heart Rate: 61.51015512265512 beats per minute  
+    Minimum Heart Rate: 51.77 beats per minute  
+    Maximum Heart Rate: 68.47 beats per minute  
+    Median (50th percentile) Heart Rate: 61.51 beats per minute  
     25th Percentile: 57.65 beats per minute  
     75th Percentile: 63.30 beats per minute  
 
