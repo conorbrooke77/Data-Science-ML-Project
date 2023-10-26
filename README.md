@@ -171,7 +171,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization of Sleep Stages Distribution.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
 
 
 #### 3. Feature Engineering
@@ -199,7 +199,7 @@ Below are the total rows of each dataset used:
     minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
     ```
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true) 
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
 
 - **Calculating Sleep Duration per Sleep Stage**
     ```python
