@@ -335,38 +335,34 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 
 - **Identify and Remove Null Values**
    ```python
-   # Checking for null values and data types in the road_fatalities_monthly dataset
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
-   print("Data Types:\n", road_fatalities_monthly.dtypes)
-   
-   # Checking for null values and data types in the current_road_fatalities_monthly dataset
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
-   print("Data Types:\n", current_road_fatalities_monthly.dtypes)
    ```
    
    ```python
    # Adding the value 22 to the row where Year = 2023 and Month of Fatality = October
-   road_fatalities_monthly.loc[(road_fatalities_monthly['Year'] == 2023) & (road_fatalities_monthly['Month of Fatality'] == 'October'), 'VALUE'] = 22
+   road_fatalities_monthly.loc[(road_fatalities_monthly['Year'] == 2023) &
+         (road_fatalities_monthly['Month of Fatality'] == 'October'), 'VALUE'] = 22
    
-   # Removing any remaining rows with null/missing values in 'road_fatalities_monthly'
+   # Removing any remaining rows with missing values in 'road_fatalities_monthly'
    road_fatalities_monthly.dropna(inplace=True)
    ```
-  In the `road_fatalities_monthly` dataset, I found 3 missing values in the `VALUE` column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed two of the      three rows with null values in `road_fatalities_monthly` as it's not possible to retrieve the missing `VALUE` data. However, I was able to provide the `VALUE` for '2023 October' in `road_fatalities_monthly`      using data from `current_road_fatalities_monthly` dataset.
+    <br>
+  In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed two of the      three rows with null values in `road_fatalities_monthly` as it's not possible to retrieve the missing 'VALUE' data. However, I was able to provide the 'VALUE' for '2023 October' in `road_fatalities_monthly`      using data from `current_road_fatalities_monthly` dataset.
 
-
-- **Column Renaming**
+    <br>
+- **Column Removal and Renaming**
     ```python
-    heartrate_seconds.rename(columns={'Time': 'date'}, inplace=True)
-    minuteSteps.rename(columns={'ActivityMinute': 'date'}, inplace=True)
-    heartrate_seconds.rename(columns={'Value': 'Heart Rate'}, inplace=True)
-    minuteSleep.rename(columns={'value': 'SleepStage'}, inplace=True)
+   road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   road_fatalities_monthly.drop(columns=['UNIT', 'STATISTIC Label'], inplace=True)
+   
+   current_road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
-    Columns were renamed to maintain consistency and clarity across datasets.
+  Datasets were modified for better clarity by renaming columns essential for analysis. 
+  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making them easier to understand and analyze. 
 
-- **Column Removal**
-    ```python
-    minuteSleep.drop(columns=['logId'], inplace=True)
-    ```
+
 
 - **Data Resampling**
     ```python
