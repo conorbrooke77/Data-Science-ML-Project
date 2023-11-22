@@ -295,16 +295,17 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 *So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
 
 ### Description
-This project revolves around the issue of road safety, aiming to develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland this year.  
+This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland. 
 
-The two datasets used in this project are ROA11 and ROA29, which include records of road fatalities in Ireland over the last two decades. By analysing this data, a predictive model to find seasonal trends in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by exploratory data analysis (EDA), where the data will be further analysed to discover all trends and patterns.  
+The two datasets used in this project are ROA11 and ROA29, by analysing this data, a predictive model in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by feature engineering and exploratory data analysis (EDA), where the data will be further analysed and engineered.
 
-The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model that can predict road fatalities accurately for the remainder of 2023, helping to improve road safety planning for this winter. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
+The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
 
 
 ### Datasets Discussed
 *Check the Dataset out yourself:* [Road Safety Statistics](https://data.cso.ie/product/RSARS)
-
+    <br>  
+    
 #### Renaming Datasets for Clarity in Python
 
 This section of the code focuses on renaming the datasets used from Road Safety Statistics (ROA11 and ROA29) to improve clarity.
@@ -320,7 +321,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 `total_rows_road_fatalities_monthly = 312`  
 
 `total_rows_current_road_fatalities_monthly = 286`  
-
+    <br>  
     
 ### Technologies Used
 - Python: For programming, analysis, and modeling.
@@ -328,12 +329,14 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Matplotlib: For data visualization and EDA.
 - Scikit-learn: For implementing machine learning models.
 - Jupyter Notebook: As the development environment.
-
+    <br>  
+    
 ### Techniques Applied and How They Were Used
 
 #### 1. Data Cleaning and Preprocessing
 
-- **Identify and Removal of Null Values**
+- **Identify and Removal of Null Values**  
+  
    ```python
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
@@ -376,11 +379,11 @@ By splitting the 'Month' column into separate 'Month' and 'Year' columns, both d
    <br>  
     
 Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
-    <br>  
+   <br>  
     
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png) 
-    <br>  
-
+   <br>  
+   
       
 #### 2. Feature Engineering
 
@@ -400,12 +403,11 @@ Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, wi
     ```
   
    <br>
-Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.
+Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.    <br>
   
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
   <br>
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Daily-SleepDuration.png?raw=true) 
   <br>
-
 #### 3. Exploratory Data Analysis (EDA)
 
 - **Visualization of Yearly Road Fatalities in Ireland (2000 - 2023)**
