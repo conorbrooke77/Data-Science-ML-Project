@@ -122,7 +122,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
 
     **Basic Statistical Summary for Sampled Individuals:**
 
@@ -148,7 +148,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
 
     **Basic Statistical Summary for Joe on 2016-04-13:**
 
@@ -173,7 +173,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/sleep-stage-data.png?raw=true)  
 
 
 #### 3. Feature Engineering
@@ -206,7 +206,7 @@ Below are the total rows of each dataset used:
     minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
     sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
     ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Daily-SleepDuration.png?raw=true) 
 
 - **Understanding Sleep Data Consistency**
     ```python
@@ -216,7 +216,7 @@ Below are the total rows of each dataset used:
     # Calculate the percentage
     sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
     ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Percentage-Sleep.png?raw=true)  
 
     Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
     FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
@@ -397,7 +397,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
     ```python
 
     ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Daily-SleepDuration.png?raw=true) 
 
 - **Understanding Sleep Data Consistency**
     ```python
