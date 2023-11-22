@@ -333,18 +333,18 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 
 #### 1. Data Cleaning and Preprocessing
 
-- **Null Value and Data Type Check**
-    ```python
-    # Checked for any Null values and inconsistent datatypes across all datasets
-    ```
+- **Identify and Remove Null Values**
+   ```python
+   # Checking for null values and data types in the road_fatalities_monthly dataset
+   print("Null Values:\n", road_fatalities_monthly.isnull().sum())
+   print("Data Types:\n", road_fatalities_monthly.dtypes)
+   
+   # Checking for null values and data types in the current_road_fatalities_monthly dataset
+   print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
+   print("Data Types:\n", current_road_fatalities_monthly.dtypes)
+   ```
+  In the `road_fatalities_monthly` dataset, I found 3 missing values in the `VALUE` column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed two of the    three rows with null values in `road_fatalities_monthly` as it's not possible to retrieve the missing `VALUE` data. However, I was able to provide the `VALUE` for '2023 October' in `road_fatalities_monthly` using data from `current_road_fatalities_monthly` dataset.
 
-- **Datetime Formatting**
-    ```python
-    minuteSleep['date'] = pd.to_datetime(minuteSleep['date'], format='%m/%d/%Y %I:%M:%S %p')
-    heartrate_seconds['Time'] = pd.to_datetime(heartrate_seconds['Time'], format='%m/%d/%Y %I:%M:%S %p')
-    minuteSteps['ActivityMinute'] = pd.to_datetime(minuteSteps['ActivityMinute'], format='%m/%d/%Y %I:%M:%S %p')
-    ```
-    Datetime columns were converted to a consistent format for easier handling and manipulation.
 
 - **Column Renaming**
     ```python
