@@ -373,7 +373,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
   Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
   
     <br>
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png?raw=true) 
     <br>
     
 #### 2. Feature Engineering
