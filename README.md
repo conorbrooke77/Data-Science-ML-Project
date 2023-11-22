@@ -333,22 +333,14 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 
 #### 1. Data Cleaning and Preprocessing
 
-- **Identify and Remove Null Values**
+- **Identify and Removal of Null Values**
    ```python
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
    ```
-   
-   ```python
-   # Adding the value 22 to the row where Year = 2023 and Month of Fatality = October
-   road_fatalities_monthly.loc[(road_fatalities_monthly['Year'] == 2023) &
-         (road_fatalities_monthly['Month of Fatality'] == 'October'), 'VALUE'] = 22
-   
-   # Removing any remaining rows with missing values in 'road_fatalities_monthly'
-   road_fatalities_monthly.dropna(inplace=True)
-   ```
+
     <br>
-  In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed two of the      three rows with null values in `road_fatalities_monthly` as it's not possible to retrieve the missing 'VALUE' data. However, I was able to provide the 'VALUE' for '2023 October' in `road_fatalities_monthly`      using data from `current_road_fatalities_monthly` dataset.
+  In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
 
     <br>
 - **Column Removal and Renaming**
@@ -360,22 +352,64 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
   Datasets were modified for better clarity by renaming columns essential for analysis. 
-  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making them easier to understand and analyze. 
-
-
-
-- **Data Resampling**
-    ```python
-    heartrate_minutes = (
-        heartrate_seconds
-        .groupby(['Id', heartrate_seconds['date'].dt.floor('T')]) 
-        .agg({'Heart Rate': 'mean'})
-        .reset_index()
-    )
+  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making them easier to understand and analyze.
+  
+    <br>
+- **Merging Road Fatality Data Sources**
+  ```python
+   road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   road_fatalities_monthly.drop(columns=['UNIT', 'STATISTIC Label'], inplace=True)
+   
+   current_road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
-    Heart rate data was resampled from seconds to minutes granularity to reduce dataset size and improve manageability.
 
-#### 2. Exploratory Data Analysis (EDA)
+#### 2. Feature Engineering
+
+- **Time Data Splitting**
+    ```python
+    heartrate_minutes_split_time = heartrate_minutes['DateTime'].str.split(' ', expand=True)
+    ```
+    The DateTime column was split into separate date and time components for more granular analysis.
+
+- **Usernames Association**
+    ```python
+    heartrate_minutes['Names'] = heartrate_minutes['Id'].map(id_to_name)
+    ```
+    Random names were associated with user IDs for clearer and more human-readable data visualization.
+
+- **Sleep Stage Mapping for Readability**
+    ```python
+    sleep_stages = {
+        1: 'Awake',
+        2: 'REM',
+        3: 'Deep Sleep'
+    }
+    # Apply the mapping to the 'SleepStage' column
+    minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
+    ```
+
+- **Calculating Sleep Duration per Sleep Stage**
+    ```python
+    minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
+    sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
+    ```
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+
+- **Understanding Sleep Data Consistency**
+    ```python
+    total_sleep = minuteSleepCopy.groupby(['Id', 'day']).size().reset_index(name='Total_minutes')
+    # Merge total_sleep with sleep_duration
+    sleep_duration = sleep_duration.merge(total_sleep, on=['Id', 'day'])
+    # Calculate the percentage
+    sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
+    ```
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
+
+    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
+    FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
+
+#### 3. Exploratory Data Analysis (EDA)
 
 - **Visualization of Heart Rate Data Per Hour Over a Month Period**
     ```python
@@ -440,52 +474,6 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
     This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
 
     ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
-
-
-#### 3. Feature Engineering
-
-- **Time Data Splitting**
-    ```python
-    heartrate_minutes_split_time = heartrate_minutes['DateTime'].str.split(' ', expand=True)
-    ```
-    The DateTime column was split into separate date and time components for more granular analysis.
-
-- **Usernames Association**
-    ```python
-    heartrate_minutes['Names'] = heartrate_minutes['Id'].map(id_to_name)
-    ```
-    Random names were associated with user IDs for clearer and more human-readable data visualization.
-
-- **Sleep Stage Mapping for Readability**
-    ```python
-    sleep_stages = {
-        1: 'Awake',
-        2: 'REM',
-        3: 'Deep Sleep'
-    }
-    # Apply the mapping to the 'SleepStage' column
-    minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
-    ```
-
-- **Calculating Sleep Duration per Sleep Stage**
-    ```python
-    minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
-    sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
-    ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
-
-- **Understanding Sleep Data Consistency**
-    ```python
-    total_sleep = minuteSleepCopy.groupby(['Id', 'day']).size().reset_index(name='Total_minutes')
-    # Merge total_sleep with sleep_duration
-    sleep_duration = sleep_duration.merge(total_sleep, on=['Id', 'day'])
-    # Calculate the percentage
-    sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
-    ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
-
-    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
-    FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
 
 
 ### Data Processing Techniques
