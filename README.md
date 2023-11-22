@@ -122,7 +122,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
 
     **Basic Statistical Summary for Sampled Individuals:**
 
@@ -148,7 +148,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
 
     **Basic Statistical Summary for Joe on 2016-04-13:**
 
@@ -173,7 +173,7 @@ Below are the total rows of each dataset used:
     ```
     This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/sleep-stage-data.png?raw=true)  
 
 
 #### 3. Feature Engineering
@@ -206,7 +206,7 @@ Below are the total rows of each dataset used:
     minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
     sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
     ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Daily-SleepDuration.png?raw=true) 
 
 - **Understanding Sleep Data Consistency**
     ```python
@@ -216,7 +216,7 @@ Below are the total rows of each dataset used:
     # Calculate the percentage
     sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
     ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Percentage-Sleep.png?raw=true)  
 
     Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
     FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
@@ -295,16 +295,17 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 *So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
 
 ### Description
-This project revolves around the issue of road safety, aiming to develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Both datasets provide road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland this year.  
+This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland. 
 
-The two datasets used in this project are ROA11 and ROA29, which include records of road fatalities in Ireland over the last two decades. By analysing this data, a predictive model to find seasonal trends in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by exploratory data analysis (EDA), where the data will be further analysed to discover all trends and patterns.  
+The two datasets used in this project are ROA11 and ROA29, by analysing this data, a predictive model in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by feature engineering and exploratory data analysis (EDA), where the data will be further analysed and engineered.
 
-The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model that can predict road fatalities accurately for the remainder of 2023, helping to improve road safety planning for this winter. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
+The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
 
 
 ### Datasets Discussed
 *Check the Dataset out yourself:* [Road Safety Statistics](https://data.cso.ie/product/RSARS)
-
+    <br>  
+    
 #### Renaming Datasets for Clarity in Python
 
 This section of the code focuses on renaming the datasets used from Road Safety Statistics (ROA11 and ROA29) to improve clarity.
@@ -320,7 +321,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 `total_rows_road_fatalities_monthly = 312`  
 
 `total_rows_current_road_fatalities_monthly = 286`  
-
+    <br>  
     
 ### Technologies Used
 - Python: For programming, analysis, and modeling.
@@ -328,20 +329,23 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Matplotlib: For data visualization and EDA.
 - Scikit-learn: For implementing machine learning models.
 - Jupyter Notebook: As the development environment.
-
+    <br>  
+    
 ### Techniques Applied and How They Were Used
 
 #### 1. Data Cleaning and Preprocessing
 
-- **Identify and Removal of Null Values**
+- **Identify and Removal of Null Values**  
+  
    ```python
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
+   road_fatalities_monthly.dropna(inplace=True)
    ```
     <br>
-  In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
-  
+In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
     <br>
+    
 - **Column Removal and Renaming**
     ```python
    road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
@@ -351,91 +355,89 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    current_road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
-  Datasets 'VALUE' column names were modified for better clarity which is essential for analysis. 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
-  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
-  
     <br>
+The datasets 'VALUE' column names were modified for better clarity which is essential for analysis. The 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
+By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
+    <br>  
+    
 - **Merging Road Fatality Datasets for Improved Analysis**
   
   ```python
-   current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ', expand=True)
+   current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ')
    current_road_fatalities_monthly['Year'] = current_road_fatalities_monthly['Year'].astype(int)
   ```
-    <br>
-  By splitting the 'Month' column into separate 'Month' and 'Year' columns, both dataset columns are aligned, allowing easier merging and comparison across datasets.
-    <br>
+    <br>  
+    
+By splitting the 'Month' column into separate 'Month' and 'Year' columns, both dataset columns are aligned, allowing easier merging and comparison across datasets.
+    <br>  
     
   ```python
    road_fatalities_2000_to_2023 = pd.concat([temp_current_road_fatalities_monthly, all_months_data], ignore_index=True)
 
    road_fatalities_2000_to_2023 = road_fatalities_2000_to_2023.drop(road_fatalities_2000_to_2023.index[-1])
   ```
-  Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
-  
-    <br>
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
-    <br>
+   <br>  
     
+Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
+   <br>  
+    
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png) 
+   <br>  
+   
+      
 #### 2. Feature Engineering
 
-- **Time Data Splitting**
+- **Mapping Seasons To The Dataset**
     ```python
+    # Mapping each month to its season
+    seasons = {
+       'January': 'Winter', 'February': 'Winter', 'March': 'Spring',
+       'April': 'Spring', 'May': 'Spring', 'June': 'Summer',
+       'July': 'Summer', 'August': 'Summer', 'September': 'Autumn',
+       'October': 'Autumn', 'November': 'Autumn', 'December': 'Winter',
+       'Annual Fatalities': 'Annual'
+   }
+
+   # Creating a new column 'Season'
+   road_fatalities_2000_to_2023['Season'] = road_fatalities_2000_to_2023['Month'].map(seasons)
     ```
-    The DateTime column was split into separate date and time components for more granular analysis.
-
-- **Usernames Association**
-    ```python
-    ```
-    Random names were associated with user IDs for clearer and more human-readable data visualization.
-
-- **Sleep Stage Mapping for Readability**
-    ```python
-
-    ```
-
-- **Calculating Sleep Duration per Sleep Stage**
-    ```python
-
-    ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
-
-- **Understanding Sleep Data Consistency**
-    ```python
-    total_sleep = minuteSleepCopy.groupby(['Id', 'day']).size().reset_index(name='Total_minutes')
-    # Merge total_sleep with sleep_duration
-    sleep_duration = sleep_duration.merge(total_sleep, on=['Id', 'day'])
-    # Calculate the percentage
-    sleep_duration['Percentage'] = (sleep_duration['Duration_minutes'] / sleep_duration['Total_minutes']) * 100
-    ```
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Percentage-Sleep.png?raw=true)  
-
-    Completely inaccurate or misunderstood data, as its highly unlikely to stay awake 94% of each day for a month.
-    FitBit gives a better breakdown of how nighttime sleep pattern distrubution should look: [FitBit](https://blog.fitbit.com/sleep-stages-explained/)
-
+  
+   <br>
+Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.    <br>
+  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
+  <br>
+  <br>
 #### 3. Exploratory Data Analysis (EDA)
 
-- **Visualization of Heart Rate Data Per Hour Over a Month Period**
+- **Visualization of Yearly Road Fatalities in Ireland (2000 - 2023)**
     ```python
-    plt.figure(figsize=(15, 7))
-    for individual in sampled_individuals:
-        individual_data = hourly_data[hourly_data['Names'] == individual]
-        plt.plot(pd.to_datetime(individual_data['Date'].astype(str) + ' ' + individual_data['Hour'].astype(str) + ':00:00'), 
-                 individual_data['Avg Heart Rate Per Minute'], 
-                 label=individual)
+   # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
+   annual_road_fatalities = annual_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
+   
+   plt.figure(figsize=(14, 7))
+   
+   # Giving a marker for each year
+   annual_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
+   
+   plt.title('Yearly Trend of Road Fatalities in Ireland (2000 - 2023)')
+   plt.xlabel('Year')
+   plt.ylabel('Number of Fatalities')
+   plt.grid(True)
+   plt.show()
     ```
-    This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
 
-    **Basic Statistical Summary for Sampled Individuals:**
-
-    Mean (Average) Heart Rate: 69.52 beats per minute  
-    Standard Deviation: 15.19  
-    Minimum Heart Rate: 36.8 beats per minute  
-    Maximum Heart Rate: 187.0 beats per minute  
-    Median (50th percentile) Heart Rate: 66.43 beats per minute  
-    25th Percentile: 59.40 beats per minute  
-    75th Percentile: 75.80 beats per minute  
+   **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**
+   Mean Fatalities (Average): 246.87
+   Standard Deviation: 103.29
+   Minimum Fatalities: 135.0
+   25th Percentile: 158.5
+   Median: 192.0
+   75th Percentile: 351.5
+   Maximum Fatalities: 415.0
 
 - **Visualization of Heart Rate Data Per Hour For A Sample User**
     ```python
