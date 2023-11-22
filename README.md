@@ -7,28 +7,17 @@ This repository displays my data science and machine learning projects, highligh
 ### Table of Contents
 
 1. [Introduction](#introduction)
-2. [Background](#background)
-3. [About Me](#about-me)
-4. [Project Portfolio](#project-portfolio)
+2. [About Me](#about-me)
+3. [Project Portfolio](#project-portfolio)
    - [Project 1: Daytime Heart Rate Insights to Predict Sleep Stages with Fitbit Data](#project-1-Daytime-Heart-Rate-Insights-to-Predict-Sleep-Stages-with-Fitbit-Data)
    - [Project 2: Predictive Analysis of Road Fatalities in Ireland](#project-2-predictive-analysis-of-road-fatalities-in-ireland)
    - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-match-outcome-predictions-&-player-statistics)
-5. [All Technologies Used](#all-technologies-used)
-6. [How to Run](#how-to-run)
-7. [Portfolio Specification](#portfolio-specification)
-8. [Contributors](#contributors)
+4. [All Technologies Used](#all-technologies-used)
+5. [Contributors](#contributors)
 
 ## Introduction
 
 In this repository, you will find a collection of data science and machine learning projects that I have worked on during my academic journey. These projects demonstrate my skills and expertise in various areas of data science and machine learning, including data analysis, data visualization, model development, and more.
-
-## Background
-
-In this section, you would:
-
-- **Significance of the Portfolio**: Explain why showcasing your projects is essential. This could relate to demonstrating understanding in modern tools and techniques.
-
-- **Purpose**: Describe what readers should expect from the portfolio.
 
 ## About Me
    ### Profile
@@ -266,10 +255,6 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 - The MinuteSleep data, based on the percentage analysis, is inconsistent and inaccurate. This has led to challenges in interpreting the data correctly.
 - In-depth analysis of sleep stages showed that users spent an unusually high percentage of time being "Awake", raising concerns about the reliability of this dataset.
 
-### Modeling Roadblocks
-
-Haven't begun modeling for Iteration 1.
-
 ### Conceptual Hurdles
 
 - Have to get a better grasp on the aspects influencing sleep stages.
@@ -282,7 +267,6 @@ The main issue was with the `minuteSleep` dataset. It didn't seem right. For exa
 Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
 Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
-<br>
 <br>
 <br>
 <br>
