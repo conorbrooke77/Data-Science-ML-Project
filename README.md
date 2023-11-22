@@ -332,6 +332,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Jupyter Notebook: As the development environment.
 <br>
 <br>
+
 ### Techniques Applied and How They Were Used
 
 #### 1. Data Cleaning and Preprocessing
@@ -344,6 +345,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    road_fatalities_monthly.dropna(inplace=True)
    ```
 <br>
+
 In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
 <br>
 <br>
@@ -359,10 +361,12 @@ In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE
     ```
 <br>
 <br>
+
 The datasets 'VALUE' column names were modified for better clarity which is essential for analysis. The 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
 By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
 <br>
 <br>
+
 - **Merging Road Fatality Datasets for Improved Analysis**
   
   ```python
@@ -385,7 +389,9 @@ By splitting the 'Month' column into separate 'Month' and 'Year' columns, both d
 Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
 <br>
 <br> 
-    
+
+**Road_fatalities Dataset**  
+<br> 
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png) 
 <br>
 <br>   
@@ -412,7 +418,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
 <br>
 <br>
   
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Seasons_Added.png)  
 <br>
 <br>
 #### 3. Exploratory Data Analysis (EDA)
@@ -435,16 +441,16 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
     ```
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
 
-   **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**
-   Mean Fatalities (Average): 246.87
-   Standard Deviation: 103.29
-   Minimum Fatalities: 135.0
-   25th Percentile: 158.5
-   Median: 192.0
-   75th Percentile: 351.5
-   Maximum Fatalities: 415.0
+   **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**  
+   Mean Fatalities (Average): 246.87  
+   Standard Deviation: 103.29  
+   Minimum Fatalities: 135.0  
+   25th Percentile: 158.5  
+   Median: 192.0  
+   75th Percentile: 351.5  
+   Maximum Fatalities: 415.0  
 
 - **Visualization of Heart Rate Data Per Hour For A Sample User**
     ```python
