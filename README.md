@@ -337,11 +337,12 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    ```python
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
+   road_fatalities_monthly.dropna(inplace=True)
    ```
     <br>
 In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
-  
     <br>
+    
 - **Column Removal and Renaming**
     ```python
    road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
@@ -351,6 +352,7 @@ In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE
    current_road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
+    <br>
 Datasets 'VALUE' column names were modified for better clarity which is essential for analysis. 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
 By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
   
