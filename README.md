@@ -282,9 +282,10 @@ The main issue was with the `minuteSleep` dataset. It didn't seem right. For exa
 Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
 Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
-
-
-
+<br>
+<br>
+<br>
+<br>
   
 ## Project 2: Predictive Analysis of Road Fatalities in Ireland 
 
