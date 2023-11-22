@@ -283,6 +283,9 @@ Because of these issues, I might need to change my approach. Maybe I'll look at 
 Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
 
+
+
+  
 ## Project 2: Predictive Analysis of Road Fatalities in Ireland 
 
 ### Description
