@@ -286,6 +286,11 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ## Project 2: Predictive Analysis of Road Fatalities in Ireland 
 
 ### Description
+This project revolves around the issue of road safety, aiming to develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Both datasets provide road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland this year.  
+
+The two datasets used in this project are ROA11 and ROA29, which include records of road fatalities in Ireland over the last two decades. By analysing this data, a predictive model to find seasonal trends in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by exploratory data analysis (EDA), where the data will be further analysed to discover all trends and patterns.  
+
+The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model that can predict road fatalities accurately for the remainder of 2023, helping to improve road safety planning for this winter. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
 
 
 ### Datasets Discussed
@@ -309,10 +314,11 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 
     
 ### Technologies Used
-- Python
-- Pandas
-- Matplotlib (for visualization) 
-- Numpy
+- Python: For programming, analysis, and modeling.
+- Pandas: For dataset manipulation.
+- Matplotlib: For data visualization and EDA.
+- Scikit-learn: For implementing machine learning models.
+- Jupyter Notebook: As the development environment.
 
 ### Techniques Applied and How They Were Used
 
@@ -522,7 +528,7 @@ Haven't begun modeling for Iteration 1.
 - Have to get a better grasp on the aspects influencing sleep stages.
 - Understading the relationship between heart rate and sleep aswell as physical activity on sleep, especially considering the inconsistencies present in the sleep data.
 
-### Disappointing Conclusion
+### Conclusion
 
 I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
 The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
