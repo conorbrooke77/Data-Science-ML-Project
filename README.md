@@ -291,7 +291,7 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 
 #### Temporary Explaination For Starting New Project
 *I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables.*
-<br>
+  
 *So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
 
 ### Description
