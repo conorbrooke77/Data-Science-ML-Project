@@ -524,6 +524,7 @@ The mean data shown in the second graph indicates on average a decrease in 60 fa
 <br>
 
    **Seasonal Statistics of Road Fatalities in Ireland (2000 - 2023)**
+  
    Mean (Average): 1459.00  
    Standard Deviation: 55.97  
    Minimum: 1399.0  
@@ -558,17 +559,6 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 - Acquire hands-on experience with real-world datasets.
 - Improve understanding of time-series data.
 
-### New Technologies Learned
-
-- Practice with Pandas for data preprocessing and exploratory data analysis.
-- Visualization techniques, particularly with Matplotlib.
-
-### Datasets Explored
-
-- **heartrate_seconds**: Captured heart rates every second.
-- **minuteSleep**: Documented sleep metrics every minute.
-- **minuteSteps**: Recorded steps metrics every minute.
-
 ### Skills Acquired
 
 - Better understanding of time-series data analysis.
@@ -586,10 +576,6 @@ The data, sourced from Fitbit (Fitabase), presented potential biases due to its 
 - The dataset's potential biases came from a limited participant count and third-party collection methods, eventhough datasets are large the data stays quite consistent.
 - The MinuteSleep data, based on the percentage analysis, is inconsistent and inaccurate. This has led to challenges in interpreting the data correctly.
 - In-depth analysis of sleep stages showed that users spent an unusually high percentage of time being "Awake", raising concerns about the reliability of this dataset.
-
-### Modeling Roadblocks
-
-Haven't begun modeling for Iteration 1.
 
 ### Conceptual Hurdles
 
