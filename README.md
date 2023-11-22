@@ -427,7 +427,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
 
 #### 3. Exploratory Data Analysis (EDA)
 
-- **Visualization of Yearly Road Fatalities in Ireland (2000 - 2023)**
+- **Visualization of Yearly Road Fatalities in Ireland (2000 - 2022)**
     ```python
    # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
    annual_road_fatalities = annual_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
@@ -436,20 +436,20 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    
    # Giving a marker for each year
    annual_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
-   
    plt.title('Yearly Trend of Road Fatalities in Ireland (2000 - 2023)')
    plt.xlabel('Year')
    plt.ylabel('Number of Fatalities')
    plt.grid(True)
    plt.show()
     ```
-   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2022).
 <br>
 
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
 <br>
 
-   **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**  <br>
+   **Statistical Summary of Yearly Road Fatalities (2000 - 2022)**
+  
    Mean Fatalities (Average): 246.87  
    Standard Deviation: 103.29  
    Minimum Fatalities: 135.0  
@@ -465,7 +465,6 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    specific_road_fatalities = road_fatalities_2000_to_2023[(road_fatalities_2000_to_2023['Month'] == 'Annual Fatalities')
                                                           & (road_fatalities_2000_to_2023['Year'] > 2006)]
    
-   
    # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
    specific_road_fatalities = specific_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
    
@@ -473,12 +472,49 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    
    # Giving a marker for each year
    specific_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
-   
    plt.title('Trend of Road Fatalities in Ireland after RSA was formed')
    plt.xlabel('Year')
    plt.ylabel('Number of Fatalities')
    plt.grid(True)
    plt.show()
+    ```
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2006 - 2023).
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland_2006.png)  
+<br>
+<br>
+
+   **Statistical Summary of Road Fatalities after 2006**
+  
+   Mean (Average): 187.88  
+   Standard Deviation: 56.00  
+   Minimum: 135.0  
+   25th Percentile: 152.0  
+   Median (50th Percentile): 172.5  
+   75th Percentile: 197.0  
+   Maximum: 338.0  
+<br>
+
+**Annual Data Trends Analysis**  
+
+<br>
+The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2023. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
+This decrease could be due to many factors:<br><br>
+
+**Enhanced Road Safety Measures:** Over the years, Ireland has implemented more effective road safety policies, including stricter enforcement of traffic laws, improved road infrastructure, and better safety awareness campaigns like Road Safety Authority (RSA) formed in 2006.<br><br>
+**Improvement in Vehicle Safety:** Modern vehicles are equipped with better safety features like anti-lock braking systems, and electronic stability control.<br><br>
+**Driver Behaviour Changes:** There is a correlation between RSA being formed and a major drop in road fatalities as shown in the second graph. RSA could have helped raise awareness on driving safety in Ireland, which has positively influenced driving safety, leading to safer roads.<br><br>
+The mean data shown in the second graph indicates on average a decrease in 60 fatalities annually on Irish roads after 2006. The analysis suggests that future road safety initiatives could continue this positive trend, further reducing fatalities on Ireland's roads.
+
+<br>
+
+- **Visualization of Seasonal Impact on Road Fatalities in Ireland (2000 - 2023)**
+    ```python
+   seasonal_fatalities = filtered_data.groupby('Season')['Road Fatality Count'].sum()
+   
+   plt.figure(figsize=(10, 6))
+   sns.barplot(x=seasonal_fatalities.index, y=seasonal_fatalities.values)
     ```
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
 <br>
@@ -497,37 +533,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    75th Percentile: 197.0  
    Maximum: 338.0  
 <br>
-<br>
-
-**Annual Data Trends Analysis**
-
-<br>
-<br>
-The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2023. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
-This decrease could be due to many factors:<br><br>
-
-**Enhanced Road Safety Measures:** Over the years, Ireland has implemented more effective road safety policies, including stricter enforcement of traffic laws, improved road infrastructure, and better safety awareness campaigns like Road Safety Authority (RSA) formed in 2006.<br><br>
-**Improvement in Vehicle Safety:** Modern vehicles are equipped with better safety features like anti-lock braking systems, and electronic stability control.<br><br>
-**Driver Behaviour Changes:** There is a correlation between RSA being formed and a major drop in road fatalities as shown in the second graph. RSA could have helped raise awareness on driving safety in Ireland, which has positively influenced driving safety, leading to safer roads.<br><br>
-The mean data shown in the second graph indicates on average a decrease in 60 fatalities annually on Irish roads after 2006. The analysis suggests that future road safety initiatives could continue this positive trend, further reducing fatalities on Ireland's roads.
-
 <br>  
-
-- **Visualization of Sleep Stages Distribution**
-    ```python
-    total_minutes_per_stage = sleep_duration.groupby('SleepStage')['Duration_minutes'].sum()
-    total_minutes = total_minutes_per_stage.sum()
-    percentage_per_stage = (total_minutes_per_stage / total_minutes) * 100
-    percentage_per_stage.plot(kind='bar', color=['blue', 'green', 'red'])
-    plt.title('Percentage of Time Spent in Each Sleep Stage')
-    plt.ylabel('Percentage (%)')
-    plt.xlabel('Sleep Stage')
-    plt.show()
-    ```
-    This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
-
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
-
 
 ### Data Processing Techniques
 
