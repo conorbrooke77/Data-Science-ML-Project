@@ -304,7 +304,8 @@ The predictive model developed will be expected to use the SARIMA approach, a st
 
 ### Datasets Discussed
 *Check the Dataset out yourself:* [Road Safety Statistics](https://data.cso.ie/product/RSARS)
-    <br>  
+<br>
+<br>
     
 #### Renaming Datasets for Clarity in Python
 
@@ -329,8 +330,9 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Matplotlib: For data visualization and EDA.
 - Scikit-learn: For implementing machine learning models.
 - Jupyter Notebook: As the development environment.
-    <br>  
-    
+<br>
+<br>
+
 ### Techniques Applied and How They Were Used
 
 #### 1. Data Cleaning and Preprocessing
@@ -342,10 +344,12 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
    road_fatalities_monthly.dropna(inplace=True)
    ```
-    <br>
+<br>
+
 In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
-    <br>
-    
+<br>
+<br>
+
 - **Column Removal and Renaming**
     ```python
    road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
@@ -355,35 +359,42 @@ In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE
    current_road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
-    <br>
+<br>
+<br>
+
 The datasets 'VALUE' column names were modified for better clarity which is essential for analysis. The 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
 By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
-    <br>  
-    
+<br>
+<br>
+
 - **Merging Road Fatality Datasets for Improved Analysis**
   
   ```python
    current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ')
    current_road_fatalities_monthly['Year'] = current_road_fatalities_monthly['Year'].astype(int)
   ```
-    <br>  
-    
+<br>
+<br>
 By splitting the 'Month' column into separate 'Month' and 'Year' columns, both dataset columns are aligned, allowing easier merging and comparison across datasets.
-    <br>  
-    
+<br>
+<br>  
+
   ```python
    road_fatalities_2000_to_2023 = pd.concat([temp_current_road_fatalities_monthly, all_months_data], ignore_index=True)
 
    road_fatalities_2000_to_2023 = road_fatalities_2000_to_2023.drop(road_fatalities_2000_to_2023.index[-1])
   ```
-   <br>  
-    
+<br>
+<br>
 Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
-   <br>  
-    
+<br>
+<br> 
+
+**Merged Road Fatalities Dataset**  
+<br> 
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png) 
-   <br>  
-   
+<br>
+<br>   
       
 #### 2. Feature Engineering
 
@@ -401,16 +412,22 @@ Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, wi
    # Creating a new column 'Season'
    road_fatalities_2000_to_2023['Season'] = road_fatalities_2000_to_2023['Month'].map(seasons)
     ```
-  
-   <br>
-Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.    <br>
-  
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
-  <br>
-  <br>
+<br>
+<br>
+
+Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.
+<br>
+<br>
+
+**Road Fatalities Dataset With Season Column**  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Seasons_Added.png)  
+   
+<br>
+<br>
+
 #### 3. Exploratory Data Analysis (EDA)
 
-- **Visualization of Yearly Road Fatalities in Ireland (2000 - 2023)**
+- **Visualization of Yearly Road Fatalities in Ireland (2000 - 2022)**
     ```python
    # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
    annual_road_fatalities = annual_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
@@ -419,67 +436,104 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    
    # Giving a marker for each year
    annual_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
-   
    plt.title('Yearly Trend of Road Fatalities in Ireland (2000 - 2023)')
    plt.xlabel('Year')
    plt.ylabel('Number of Fatalities')
    plt.grid(True)
    plt.show()
     ```
-   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2022).
+<br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Average%20Heart%20Rate%20Per%20Hour%20for%20Sampled%20Individuals.png?raw=true)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
+<br>
 
-   **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**
-   Mean Fatalities (Average): 246.87
-   Standard Deviation: 103.29
-   Minimum Fatalities: 135.0
-   25th Percentile: 158.5
-   Median: 192.0
-   75th Percentile: 351.5
+   **Statistical Summary of Yearly Road Fatalities (2000 - 2022)**
+  
+   Mean Fatalities (Average): 246.87  
+   Standard Deviation: 103.29  
+   Minimum Fatalities: 135.0  
+   25th Percentile: 158.5  
+   Median: 192.0  
+   75th Percentile: 351.5  
    Maximum Fatalities: 415.0
 
-- **Visualization of Heart Rate Data Per Hour For A Sample User**
+<br>
+
+- **Visualization of Yearly Trend of Road Fatalities in Ireland after 2006**
     ```python
-    # Filter for a specific date for Joe
-    specific_date = "2016-04-13"
-    joe_data = hourly_data[(hourly_data['Names'] == 'Joe') & (hourly_data['Date'] == specific_date)]
-
-    # Plotting the data for Joe
-    plt.figure(figsize=(15, 7))
-    plt.plot(pd.to_datetime(joe_data['Date'].astype(str) + ' ' + joe_data['Hour'].astype(str) + ':00:00'), 
-    joe_data['Avg Heart Rate Per Minute'], 
-    label='Joe', color='blue')
+   specific_road_fatalities = road_fatalities_2000_to_2023[(road_fatalities_2000_to_2023['Month'] == 'Annual Fatalities')
+                                                          & (road_fatalities_2000_to_2023['Year'] > 2006)]
+   
+   # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
+   specific_road_fatalities = specific_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
+   
+   plt.figure(figsize=(14, 7))
+   
+   # Giving a marker for each year
+   specific_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
+   plt.title('Trend of Road Fatalities in Ireland after RSA was formed')
+   plt.xlabel('Year')
+   plt.ylabel('Number of Fatalities')
+   plt.grid(True)
+   plt.show()
     ```
-    This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2006 - 2023).
+<br>
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland_2006.png)  
+<br>
+<br>
 
-    **Basic Statistical Summary for Joe on 2016-04-13:**
+   **Statistical Summary of Road Fatalities after 2006**
+  
+   Mean (Average): 187.88  
+   Standard Deviation: 56.00  
+   Minimum: 135.0  
+   25th Percentile: 152.0  
+   Median (50th Percentile): 172.5  
+   75th Percentile: 197.0  
+   Maximum: 338.0  
+<br>
 
-    Mean (Average) Heart Rate: 60.59 beats per minute  
-    Standard Deviation: 4.33  
-    Minimum Heart Rate: 51.77 beats per minute  
-    Maximum Heart Rate: 68.47 beats per minute  
-    Median (50th percentile) Heart Rate: 61.51 beats per minute  
-    25th Percentile: 57.65 beats per minute  
-    75th Percentile: 63.30 beats per minute  
+**Annual Data Trends Analysis**  
 
-- **Visualization of Sleep Stages Distribution**
+<br>
+The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2023. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
+This decrease could be due to many factors:<br><br>
+
+**Enhanced Road Safety Measures:** Over the years, Ireland has implemented more effective road safety policies, including stricter enforcement of traffic laws, improved road infrastructure, and better safety awareness campaigns like Road Safety Authority (RSA) formed in 2006.<br><br>
+**Improvement in Vehicle Safety:** Modern vehicles are equipped with better safety features like anti-lock braking systems, and electronic stability control.<br><br>
+**Driver Behaviour Changes:** There is a correlation between RSA being formed and a major drop in road fatalities as shown in the second graph. RSA could have helped raise awareness on driving safety in Ireland, which has positively influenced driving safety, leading to safer roads.<br><br>
+The mean data shown in the second graph indicates on average a decrease in 60 fatalities annually on Irish roads after 2006. The analysis suggests that future road safety initiatives could continue this positive trend, further reducing fatalities on Ireland's roads.
+
+<br>
+
+- **Visualization of Seasonal Impact on Road Fatalities in Ireland (2000 - 2023)**
     ```python
-    total_minutes_per_stage = sleep_duration.groupby('SleepStage')['Duration_minutes'].sum()
-    total_minutes = total_minutes_per_stage.sum()
-    percentage_per_stage = (total_minutes_per_stage / total_minutes) * 100
-    percentage_per_stage.plot(kind='bar', color=['blue', 'green', 'red'])
-    plt.title('Percentage of Time Spent in Each Sleep Stage')
-    plt.ylabel('Percentage (%)')
-    plt.xlabel('Sleep Stage')
-    plt.show()
+   seasonal_fatalities = filtered_data.groupby('Season')['Road Fatality Count'].sum()
+   
+   plt.figure(figsize=(10, 6))
+   sns.barplot(x=seasonal_fatalities.index, y=seasonal_fatalities.values)
     ```
-    This code was used to generate a visualization of Sleep Stages Distribution. The data is highly unlikely and may be inaccurate.
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
+<br>
 
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/sleep-stage-data.png?raw=true)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland_2006.png)  
+<br>
+<br>
 
+   **Statistical Summary of Road Fatalities after 2006**
+  
+   Mean (Average): 187.88  
+   Standard Deviation: 56.00  
+   Minimum: 135.0  
+   25th Percentile: 152.0  
+   Median (50th Percentile): 172.5  
+   75th Percentile: 197.0  
+   Maximum: 338.0  
+<br>
+<br>  
 
 ### Data Processing Techniques
 
