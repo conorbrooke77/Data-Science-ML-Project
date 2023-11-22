@@ -288,8 +288,8 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ### Description
 
 
-### Dataset
-**Road Fatalities Data:** [Road Safety Statistics](https://data.cso.ie/product/RSARS)
+### Datasets Discussed
+*Check the Dataset out yourself:* [Road Safety Statistics](https://data.cso.ie/product/RSARS)
 
 #### Renaming Datasets for Clarity in Python
 
@@ -303,11 +303,10 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 ```
 #### Below are the total rows of each dataset used:  
 
-`heartrate_seconds_num_rows = 2483658`  
+`total_rows_road_fatalities_monthly = 312`  
 
-`minuteSleep_num_rows = 188521`  
+`total_rows_current_road_fatalities_monthly = 286`  
 
-`minuteSteps_num_rows= 1325580`  
     
 ### Technologies Used
 - Python
