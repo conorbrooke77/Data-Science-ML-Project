@@ -353,33 +353,35 @@ In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
     <br>
-Datasets 'VALUE' column names were modified for better clarity which is essential for analysis. 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
+The datasets 'VALUE' column names were modified for better clarity which is essential for analysis. The 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
 By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
-  
-    <br>
+    <br>  
+    
 - **Merging Road Fatality Datasets for Improved Analysis**
   
   ```python
-   current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ', expand=True)
+   current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ')
    current_road_fatalities_monthly['Year'] = current_road_fatalities_monthly['Year'].astype(int)
   ```
+    <br>  
     
-    <br>
 By splitting the 'Month' column into separate 'Month' and 'Year' columns, both dataset columns are aligned, allowing easier merging and comparison across datasets.
-    <br>
+    <br>  
     
   ```python
    road_fatalities_2000_to_2023 = pd.concat([temp_current_road_fatalities_monthly, all_months_data], ignore_index=True)
 
    road_fatalities_2000_to_2023 = road_fatalities_2000_to_2023.drop(road_fatalities_2000_to_2023.index[-1])
   ```
+   <br>  
+    
 Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
-  
-   <br>
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png?raw=true) 
-   <br>
+    <br>  
+    
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Dataset_After_Merge.png) 
+    <br>  
 
-  
+      
 #### 2. Feature Engineering
 
 - **Mapping Seasons To The Dataset**
