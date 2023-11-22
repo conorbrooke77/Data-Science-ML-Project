@@ -533,7 +533,7 @@ The mean data shown in the second graph indicates on average a decrease in 60 fa
    Maximum: 1534.0    
 <br>
 
-**Annual Data Trends Analysis**  
+**Seasonal Trends Analysis**  
 
 <br>
 The seasonal bar chart shows a consistent range of road fatalities in Ireland from 2000 to 2023, with a mean of 1459. The standard deviation of 55.97 suggests moderate variability within seasons. This stability in seasonal patterns could be crucial for predicting future trends for road fatalities in Ireland.
