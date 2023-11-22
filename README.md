@@ -445,7 +445,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2022).
 <br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland-2022.png)  
 <br>
 
    **Statistical Summary of Yearly Road Fatalities (2000 - 2022)**
@@ -499,7 +499,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
 **Annual Data Trends Analysis**  
 
 <br>
-The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2023. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
+The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2022. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
 This decrease could be due to many factors:<br><br>
 
 **Enhanced Road Safety Measures:** Over the years, Ireland has implemented more effective road safety policies, including stricter enforcement of traffic laws, improved road infrastructure, and better safety awareness campaigns like Road Safety Authority (RSA) formed in 2006.<br><br>
@@ -516,24 +516,32 @@ The mean data shown in the second graph indicates on average a decrease in 60 fa
    plt.figure(figsize=(10, 6))
    sns.barplot(x=seasonal_fatalities.index, y=seasonal_fatalities.values)
     ```
-   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
+   This code was used to generate a visualization showcasing the Seasonal Impact on Road Fatalities in Ireland (2000 - 2023).
 <br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland_2006.png)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Seasonal-Trend-of-Road-Fatalities-in-Ireland-2022.png)  
 <br>
 <br>
 
-   **Statistical Summary of Road Fatalities after 2006**
-  
-   Mean (Average): 187.88  
-   Standard Deviation: 56.00  
-   Minimum: 135.0  
-   25th Percentile: 152.0  
-   Median (50th Percentile): 172.5  
-   75th Percentile: 197.0  
-   Maximum: 338.0  
+   **Seasonal Statistics of Road Fatalities in Ireland (2000 - 2023)**
+   Mean (Average): 1459.00  
+   Standard Deviation: 55.97  
+   Minimum: 1399.0  
+   25th Percentile: 1434.25  
+   Median (50th Percentile): 1451.5  
+   75th Percentile: 1476.25  
+   Maximum: 1534.0    
 <br>
-<br>  
+
+**Annual Data Trends Analysis**  
+
+<br>
+The seasonal bar chart shows a consistent range of road fatalities in Ireland from 2000 to 2023, with a mean of 1459. The standard deviation of 55.97 suggests moderate variability within seasons. This stability in seasonal patterns could be crucial for predicting future trends for road fatalities in Ireland.
+
+<br>
+   
+<br>
+<br>
 
 ### Data Processing Techniques
 
