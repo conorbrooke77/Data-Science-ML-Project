@@ -338,61 +338,64 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
    print("Null Values:\n", road_fatalities_monthly.isnull().sum())
    print("Null Values:\n", current_road_fatalities_monthly.isnull().sum())
    ```
-
     <br>
   In the `road_fatalities_monthly` dataset, I found 3 missing values in the 'VALUE' column, unlike the `current_road_fatalities_monthly` dataset, which is complete with no missing values. I removed the rows with   null values in `road_fatalities_monthly` and will retrieve this missing data when combining datasets.
-
+  
     <br>
 - **Column Removal and Renaming**
     ```python
-   road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
+   road_fatalities_monthly.rename(columns={'Month of Fatality': 'Month'}, inplace=True)
    road_fatalities_monthly.drop(columns=['UNIT', 'STATISTIC Label'], inplace=True)
    
-   current_road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
+   current_road_fatalities_monthly.rename(columns={'VALUE': 'Road Fatality Count'}, inplace=True)
    current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
     ```
-  Datasets were modified for better clarity by renaming columns essential for analysis. 
-  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making them easier to understand and analyze.
+  Datasets 'VALUE' column names were modified for better clarity which is essential for analysis. 'Month of Fatality' column in `road_fatalities_monthly` was also renamed to 'Month'.
+  By dropping the columns 'UNIT', 'Statistic Label', and 'Ireland', it focuses the datasets on only relevant information, making the data easier to understand and analyze.
   
     <br>
-- **Merging Road Fatality Data Sources**
+- **Merging Road Fatality Datasets for Improved Analysis**
+  
   ```python
-   road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
-   road_fatalities_monthly.drop(columns=['UNIT', 'STATISTIC Label'], inplace=True)
-   
-   current_road_fatalities_monthly.rename(columns={'VALUE': 'Number of Fatalities'}, inplace=True)
-   current_road_fatalities_monthly.drop(columns=['UNIT', 'Statistic Label', 'Ireland'], inplace=True)
-    ```
+   current_road_fatalities_monthly[['Year', 'Month']] = current_road_fatalities_monthly['Month'].str.split(' ', expand=True)
+   current_road_fatalities_monthly['Year'] = current_road_fatalities_monthly['Year'].astype(int)
+  ```
+    <br>
+  By splitting the 'Month' column into separate 'Month' and 'Year' columns, both dataset columns are aligned, allowing easier merging and comparison across datasets.
+    <br>
+    
+  ```python
+   road_fatalities_2000_to_2023 = pd.concat([temp_current_road_fatalities_monthly, all_months_data], ignore_index=True)
 
+   road_fatalities_2000_to_2023 = road_fatalities_2000_to_2023.drop(road_fatalities_2000_to_2023.index[-1])
+  ```
+  Both datasets are now merged into one dataset `road_fatalities_2000_to_2023`, with a new value 'Annual Summary' at the end of each year. The 'Annual Summary' for 2023 is removed as the year hasn't ended.
+  
+    <br>
+    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
+    <br>
+    
 #### 2. Feature Engineering
 
 - **Time Data Splitting**
     ```python
-    heartrate_minutes_split_time = heartrate_minutes['DateTime'].str.split(' ', expand=True)
     ```
     The DateTime column was split into separate date and time components for more granular analysis.
 
 - **Usernames Association**
     ```python
-    heartrate_minutes['Names'] = heartrate_minutes['Id'].map(id_to_name)
     ```
     Random names were associated with user IDs for clearer and more human-readable data visualization.
 
 - **Sleep Stage Mapping for Readability**
     ```python
-    sleep_stages = {
-        1: 'Awake',
-        2: 'REM',
-        3: 'Deep Sleep'
-    }
-    # Apply the mapping to the 'SleepStage' column
-    minuteSleep['SleepStage'] = minuteSleep['SleepStage'].replace(sleep_stages)
+
     ```
 
 - **Calculating Sleep Duration per Sleep Stage**
     ```python
-    minuteSleepCopy['day'] = minuteSleepCopy['date'].dt.date
-    sleep_duration = minuteSleepCopy.groupby(['Id', 'day', 'SleepStage']).size().reset_index(name='Duration_minutes')
+
     ```
     ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Daily-SleepDuration.png?raw=true) 
 
