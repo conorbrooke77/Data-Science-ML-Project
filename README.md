@@ -440,9 +440,9 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    plt.show()
     ```
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
-
+<br>
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland.png)  
-
+<br>
    **Statistical Summary of Yearly Road Fatalities (2000 - 2023)**  
    Mean Fatalities (Average): 246.87  
    Standard Deviation: 103.29  
@@ -452,31 +452,48 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
    75th Percentile: 351.5  
    Maximum Fatalities: 415.0  
 
-- **Visualization of Heart Rate Data Per Hour For A Sample User**
+- **Visualization of Yearly Trend of Road Fatalities in Ireland after 2006**
     ```python
-    # Filter for a specific date for Joe
-    specific_date = "2016-04-13"
-    joe_data = hourly_data[(hourly_data['Names'] == 'Joe') & (hourly_data['Date'] == specific_date)]
-
-    # Plotting the data for Joe
-    plt.figure(figsize=(15, 7))
-    plt.plot(pd.to_datetime(joe_data['Date'].astype(str) + ' ' + joe_data['Hour'].astype(str) + ':00:00'), 
-    joe_data['Avg Heart Rate Per Minute'], 
-    label='Joe', color='blue')
+   specific_road_fatalities = road_fatalities_2000_to_2023[(road_fatalities_2000_to_2023['Month'] == 'Annual Fatalities')
+                                                          & (road_fatalities_2000_to_2023['Year'] > 2006)]
+   
+   
+   # Selecting only the 'Year' and 'Road Fatality Count' columns for plotting
+   specific_road_fatalities = specific_road_fatalities[['Year', 'Road Fatality Count']].set_index('Year')
+   
+   plt.figure(figsize=(14, 7))
+   
+   # Giving a marker for each year
+   specific_road_fatalities['Road Fatality Count'].plot(kind='line', marker='o')
+   
+   plt.title('Trend of Road Fatalities in Ireland after RSA was formed')
+   plt.xlabel('Year')
+   plt.ylabel('Number of Fatalities')
+   plt.grid(True)
+   plt.show()
     ```
-    This code was used to generate a visualization showcasing the average heart rate per hour for randomly sampled individuals.
-
-    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Joe%20Daily%20Heart%20Rate%20analysis.png?raw=true)  
-
-    **Basic Statistical Summary for Joe on 2016-04-13:**
-
-    Mean (Average) Heart Rate: 60.59 beats per minute  
-    Standard Deviation: 4.33  
-    Minimum Heart Rate: 51.77 beats per minute  
-    Maximum Heart Rate: 68.47 beats per minute  
-    Median (50th percentile) Heart Rate: 61.51 beats per minute  
-    25th Percentile: 57.65 beats per minute  
-    75th Percentile: 63.30 beats per minute  
+   This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2023).
+<br>
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland_2006.png)  
+<br>
+   **Statistical Summary of Road Fatalities after 2006**
+   Mean (Average): 187.88  
+   Standard Deviation: 56.00  
+   Minimum: 135.0  
+   25th Percentile: 152.0  
+   Median (50th Percentile): 172.5  
+   75th Percentile: 197.0  
+   Maximum: 338.0  
+<br>
+<br>
+**Annual Data Trends Analysis**
+<br>
+The yearly trend of road fatalities in Ireland, as shown in the first plot graph, reveals a major decline in fatalities from 2000 to 2023. Starting at 415 fatalities in 2000, there has been a general downward trend, reaching as low as 135 in recent years. 
+This decrease could be due to many factors:<br><br>
+**Enhanced Road Safety Measures:** Over the years, Ireland has implemented more effective road safety policies, including stricter enforcement of traffic laws, improved road infrastructure, and better safety awareness campaigns like Road Safety Authority (RSA) formed in 2006.<br><br>
+**Improvement in Vehicle Safety:** Modern vehicles are equipped with better safety features like anti-lock braking systems, and electronic stability control.<br><br>
+**Driver Behaviour Changes:** There is a correlation between RSA being formed and a major drop in road fatalities as shown in the second graph. RSA could have helped raise awareness on driving safety in Ireland, which has positively influenced driving safety, leading to safer roads.<br><br>
+The mean data shown in the second graph indicates on average a decrease in 60 fatalities annually on Irish roads after 2006. The analysis suggests that future road safety initiatives could continue this positive trend, further reducing fatalities on Ireland's roads.
 
 - **Visualization of Sleep Stages Distribution**
     ```python
