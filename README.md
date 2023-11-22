@@ -290,9 +290,9 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ## Project 2: Predictive Analysis of Road Fatalities in Ireland 
 
 #### Temporary Explaination For Starting New Project
-*I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables. 
+*I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables.*
 <br>
-So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
+*So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
 
 ### Description
 This project revolves around the issue of road safety, aiming to develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Both datasets provide road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland this year.  
