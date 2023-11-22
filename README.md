@@ -291,7 +291,7 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ### Dataset
 **Road Fatalities Data:** [Road Safety Statistics](https://data.cso.ie/product/RSARS)
 
-### Renaming Datasets for Clarity in Python
+##### Renaming Datasets for Clarity in Python
 
 This section of the code focuses on renaming the datasets used from Road Safety Statistics (ROA11 and ROA29) to improve clarity.
 ```python
@@ -301,7 +301,7 @@ road_fatalities_monthly = pd.read_csv("ROA11.20231122T121139.csv")
 # Contains most up-to-date monthly road fatalities in Ireland (2000 January - 2023 October)
 current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 ```
-Below are the total rows of each dataset used:  
+##### Below are the total rows of each dataset used:  
 
 `heartrate_seconds_num_rows = 2483658`  
 
