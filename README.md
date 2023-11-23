@@ -757,15 +757,15 @@ Each model's performance was analyzed to and compared to pre data processesing.
 ### Opportunities from the Project
 
 <br>  
-This project presented a range of opportunities for growth and application:  
 
-1. **Enhanced Machine Learning Knowledge**: The hands-on experience with Decision Trees and Random Forests improved understanding of complex algorithms.  
-2. **Cross-Domain Applications**: Demonstrated the adaptability of these models in both biological classification and real estate prediction, encouraging their use in diverse sectors.  
-3. **Data-Driven Problem Solving**: Developed skills in using data to inform decision-making processes.  
-4. **Basis for Future Research**: The methodologies and insights serve as a springboard for further studies in predictive modeling and data analysis.  
+1. **New Machine Learning Knowledge**: The experience with Decision Trees and Random Forests improved my understanding of machine learning methods.  
+2. **Skill Improvement**: Improved skills in machine learning, data cleaning, and visualization techniques.  
+3. **Making Decisions with Data**: Developed skills in using data to inform decisions.    
+4. **Building a Research Foundation**: Foundation for further studies in predictive modeling and data analysis.    
   
 <br>  
-<br>   
+<br>
+
 ### Skills Acquired
 
 ### Conclusion
