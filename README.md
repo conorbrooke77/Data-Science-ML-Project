@@ -11,7 +11,7 @@ This repository displays my data science and machine learning projects, highligh
 3. [Project Portfolio](#project-portfolio)
    - [Project 1: Daytime Heart Rate Insights to Predict Sleep Stages with Fitbit Data](#project-1-Daytime-Heart-Rate-Insights-to-Predict-Sleep-Stages-with-Fitbit-Data)
    - [Project 2: Predictive Analysis of Road Fatalities in Ireland](#project-2-predictive-analysis-of-road-fatalities-in-ireland)
-   - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-match-outcome-predictions-&-player-statistics)
+   - [Project 3: Decision Trees and Random Forests in Practice](#project-3:-decision-trees-and-random-forests-in-practice)
 4. [All Technologies Used](#all-technologies-used)
 5. [Contributors](#contributors)
 
@@ -425,6 +425,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
     ```
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2022).
 <br>
+<br>
 
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland-2022.png)  
 <br>
@@ -670,8 +671,9 @@ Conducting an in-depth EDA provided essential insights into both datasets:
 A bar chart visualization to understand the distribution of different Iris species.  
 
 <br>
+<br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_bar_graph.png)  
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_bar_graph.png)  
 <br>
 <br>
 
@@ -703,13 +705,15 @@ The boxplot analysis provides a comprehensive visual comparison of the distribut
 This visualization showcases how Iris species features are correlated using a scatter plot.
 
 <br>
+<br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph.png)  
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph.png)  
 <br>
 
 <br>
+<br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph_improved.png)  
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph_improved.png)  
 <br>
 <br>
 
@@ -727,8 +731,9 @@ This visualization showcases how Iris species features are correlated using a sc
 This visualization showcases how the decision tree algorithm classifies Iris species based on sepal length and width, illustrating the decision-making process at each node.
 
 <br>
+<br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_decision_tree.png)  
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_decision_tree.png)  
 <br>
 <br>
 
