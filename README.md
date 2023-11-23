@@ -656,14 +656,14 @@ Conducting an in-depth EDA provided essential insights into both datasets:
 
 - **Species Distribution in Iris Dataset**
     ```python
-      #Count of each iris species
-      df_iris['Species'].value_counts().plot(kind='bar')
-          
-      plt.xticks(rotation='horizontal')
-      plt.xlabel('Types of Iris')
-      plt.ylabel('Count')
-      plt.title('Total type of each iris species in dataset')
-      plt.show()
+   #Count of each iris species
+   df_iris['Species'].value_counts().plot(kind='bar')
+       
+   plt.xticks(rotation='horizontal')
+   plt.xlabel('Types of Iris')
+   plt.ylabel('Count')
+   plt.title('Total type of each iris species in dataset')
+   plt.show()
     ```
     
 <br>  
@@ -675,24 +675,63 @@ A bar chart visualization to understand the distribution of different Iris speci
 <br>
 <br>
 
-**Analysis from Visualization**
-<br>
-<br>
-
-- **Visualization of Something**
+- **Boxplot Analysis by Iris Species**
     ```python
-      sample python
+   df_iris.drop("Id", axis=1).boxplot(by = "Species", figsize = (6, 6))
+   plt.show()
     ```
-   This code was used to generate a visualization showcasing sample.
+    
+<br>  
+The boxplot analysis provides a comprehensive visual comparison of the distribution of features like petal and sepal dimensions across different Iris species. 
+
 <br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/boxplot_graph.png)  
 <br>
 <br>
 
-**Analysis from Visualization**
+- **Correlation of Features in Iris on a Scatter Plot**
+    ```python
+   iris_X = df_iris[['SepalLengthCm','SepalWidthCm']].values
+   # Converts species names to numbers
+   iris_y = df_iris['Species'].factorize()[0] 
+   plt.scatter(iris_X[:, 0], iris_X[:, 1], c=iris_y, cmap='rainbow')
+   plt.show
+    ```
+    
+<br>  
+This visualization showcases how Iris species features are correlated using a scatter plot.
+
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph.png)  
+<br>
+
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph_improved.png)  
 <br>
 <br>
+
+- **Decision Tree Visualization Using all Features of Iris**
+    ```python
+   iris_classifier = DecisionTreeClassifier(max_depth=2, random_state = 36)
+   
+   fourD_X = df_iris[['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm']]
+   new_Y = df_iris.Species
+   
+   iris_classifier.fit(fourD_X, new_Y)
+    ```
+    
+<br>  
+This visualization showcases how the decision tree algorithm classifies Iris species based on sepal length and width, illustrating the decision-making process at each node.
+
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_decision_tree.png)  
+<br>
+<br>
+
 
 ### Opportunities from the Project
 
