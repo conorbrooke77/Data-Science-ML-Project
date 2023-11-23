@@ -738,6 +738,23 @@ This visualization showcases how the decision tree algorithm classifies Iris spe
 <br>
 
 
+#### 3. Model Building and Evaluation  
+
+<br>  
+
+This phase discusses the construction and assessment of predictive models used:
+
+- **Iris Species Classification with Decision Trees:**  
+   Developed decision tree models to accurately classify Iris species. This step involved tuning parameters and visualizing tree structures to understand the         decision pathways.  
+
+- **Predicting Melbourne Housing Prices Using Random Forests:**  
+   Applied Random Forest regression models to estimate housing prices. This included an analysis of feature importance and the aggregation of predictions from        multiple decision trees to improve accuracy and reduce overfitting.  
+
+- **Comprehensive Model Evaluation:**  
+   Evaluated the models using appropriate metrics. For the Iris dataset, accuracy score was used, while for the Melbourne housing data, mean absolute error (MAE)     provided insights into the model's prediction accuracy.  
+
+Each model's performance was analyzed to and compared to pre data processesing.  
+
 ### Opportunities from the Project
 
 ### Skills Acquired
