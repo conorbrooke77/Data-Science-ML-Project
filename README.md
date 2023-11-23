@@ -274,9 +274,7 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ## Project 2: Predictive Analysis of Road Fatalities in Ireland 
 
 #### Temporary Explaination For Starting New Project
-*I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables.*
-  
-*So instead, I have started a new project entirely with 'Iteration 2'. This revised project not only include the completion of the techniques from 'Iteration 1',but also develops on these techniques with improved findings. Also the project you provided on decision trees and random forests will now be included as Project 3 instead of Project 2.*
+*I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables. So instead, I have started a new project entirely with 'Iteration 2*
 
 ### Description
 This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland. 
@@ -312,7 +310,6 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Python: For programming, analysis, and modeling.
 - Pandas: For dataset manipulation.
 - Matplotlib: For data visualization and EDA.
-- Scikit-learn: For implementing machine learning models.
 - Jupyter Notebook: As the development environment.
 <br>
 <br>
@@ -573,49 +570,94 @@ The main issue was with the `minuteSleep` dataset. It didn't seem right. For exa
 Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
 Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
-
-### Project 3: Rugby World Cup Match Outcome Predictions & Player Statistics
-
-- **Description**: A brief description of the project.
-- **GitHub Repository**: [Link to GitHub Repo](https://github.com/conorbrooke77/Data-Science-ML-Project)
-- **Live Demo**: [Link to Live Demo](https://www.youtube.com/)
-- **Technologies Used**: Examples: Python, Scikit-Learn, Pandas, BeautifulSoup (for web scraping).
-- **Techniques Applied**: 
-  - **Data Processing Techniques**: E.g., normalization, encoding, etc.
-- **Opportunities from the Project**: 
-  - **New Technologies Learned**: Briefly mention new tools, frameworks, or libraries you explored during the project.
-  - **Datasets Explored**: Discuss any unique or challenging datasets you worked with.
-  - **Skills Acquired**: Highlight any particular skills or concepts you learned or refined during the project.
-
-- **Challenges Faced**: 
-  - **Data Challenges**: Discuss issues related to data quality, imbalances, missing values, etc.
-  - **Modeling Roadblocks**: Highlight any difficulties in model selection, training, or performance.
-  - **Implementation Barriers**: Mention if there were any challenges in integrating your model with applications or other systems.
-  - **Conceptual Hurdles**: Describe any conceptual challenges you encountered and how you overcame them.
-
-- **Sample Screenshots**:
-  Below are sample visualizations generated from the project:  <br>
-  <br>
-  <img src="https://images.theconversation.com/files/545652/original/file-20230830-15-fd91hb.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip" alt="Visualization1" width="380" height="250">
-  <img src="https://images.theconversation.com/files/545680/original/file-20230831-19-uxyx75.png?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip" alt="Visualization2" width="380" height="250">
+<br>
+<br>
+<br>
   
-- **Ethical Considerations**: 
-  Describe any ethical concerns you had while working on the project data. Consider aspects like bias, fairness, or implications of predictive outcomes.
+## Project 3: Decision Tree Classifier for Iris Species and Predicting Housing Prices
 
-- **Regulations and Compliance**:
-  - **GDPR Compliance**: Discuss how you ensured that the data handling and processing complied with GDPR regulations.
+### Description
+This project explores the application of decision tree classifiers on one datasets from the UCI Machine Learning Repository and another from Kaggle. Initially, it focuses on exploratory data analysis, including data cleaning, preprocessing, and feature engineering. The first part of the project involves classifying iris species by analyzing petal length and width. The project then transitions to the Melbourne real estate domain, applying decision tree methods to predict housing prices. This project demonstrates the practical application of decision trees and their adaptability in analyzing differnt types of data.
 
-## All Technologies Used
 
-- List the key technologies and tools you have used in your projects.
+### Datasets Discussed
+*Iris Species Dataset:* [UCI Machine Learning](https://archive.ics.uci.edu/dataset/53/iris)
 
-## How to Run
+<br>  
 
-Provide instructions on how to run the projects locally if applicable.
+*Melbourne Housing Market:* [Kaggle](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market)
+<br>
+<br>
+    
 
-## Portfolio Specification
+### Technologies Used
+- Python: For programming, analysis, and modeling.
+- Pandas: For dataset manipulation.
+- Matplotlib: For data visualization and EDA.
+- Jupyter Notebook: As the development environment.
+<br>
+<br>
 
-- [Portfolio Specification Document](link-to-specification-document.pdf)
+### Techniques Applied and How They Were Used
+
+#### 1. Data Cleaning and Preprocessing
+
+
+      
+#### 2. Feature Engineering
+
+- **Mapping Seasons To The Dataset**
+    ```python
+    # Mapping each month to its season
+    seasons = {
+       'January': 'Winter', 'February': 'Winter', 'March': 'Spring',
+       'April': 'Spring', 'May': 'Spring', 'June': 'Summer',
+       'July': 'Summer', 'August': 'Summer', 'September': 'Autumn',
+       'October': 'Autumn', 'November': 'Autumn', 'December': 'Winter',
+       'Annual Fatalities': 'Annual'
+   }
+
+   # Creating a new column 'Season'
+   road_fatalities_2000_to_2023['Season'] = road_fatalities_2000_to_2023['Month'].map(seasons)
+    ```
+<br>
+<br>
+
+Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.
+<br>
+<br>
+
+**Road Fatalities Dataset With Season Column**  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Seasons_Added.png)  
+   
+<br>
+<br>
+
+#### 3. Exploratory Data Analysis (EDA)
+
+
+<br>
+
+### Opportunities from the Project
+
+- Delve into the relationship between heart rate and sleep stages, offering insights into potential sleep stage predictions using Fitbit data.
+- Acquire hands-on experience with real-world datasets.
+- Improve understanding of time-series data.
+
+### Skills Acquired
+
+- Better understanding of time-series data analysis.
+- Basic skills in data cleaning.
+- Feature engineering within date-time data.
+- Practise with visualization of time-series data.
+
+### Conclusion
+
+I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
+The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
+Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
+Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
+
 
 ## Contributors
 
