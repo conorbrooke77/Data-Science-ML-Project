@@ -577,7 +577,7 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ## Project 3: Decision Trees and Random Forests in Practice
 
 ### Description
-In this project I explore two common datasets in data science, the Iris Species and Melbourne Housing Market datasets. The primary focus is on understanding Decision Trees and Random Forests, valuable tools in machine learning, in order to make predicitve models for each dataset. The project begins with cleaning and preprocessing the datasets, followed by an in-depth exploratory data analysis (EDA). I then apply Decision Trees for species classification in the Iris dataset and use regression for predicting housing prices using Random Forests in the Melbourne dataset. These distinctly different datasets highlights the versatility these methods can have in classification.
+In this project I analyse two datasets used commonly in practicing data science, the Iris Species and Melbourne Housing Market datasets. The primary focus is on understanding Decision Trees and Random Forests, valuable tools in machine learning, in order to make predicitve models for each dataset. The project includes cleaning and preprocessing the datasets, followed by an in-depth exploratory data analysis (EDA). I apply Decision Trees for species classification in the Iris dataset and use regression for predicting housing prices using Random Forests in the Melbourne dataset. These distinctly different datasets highlights the versatility these methods can have in classification.
 
 
 ### Datasets Discussed
@@ -589,7 +589,8 @@ In this project I explore two common datasets in data science, the Iris Species 
 
 <br>  
 
-**Tutorials Used**
+**Tutorials Used**  
+
 *In Depth: Decision Trees and Random Forests:* [PythonDataScienceHandbook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.08-Random-Forests.ipynb)
 
 <br>
@@ -604,7 +605,7 @@ In this project I explore two common datasets in data science, the Iris Species 
 - Matplotlib: For data visualization and EDA.
 - Jupyter Notebook: As the development environment.
 - Numpy: Used for numerical computations 
-- Scikit-learn: Used for implementing machine learning algorithms, specifically Decision Trees and Random Forests.
+- Scikit-learn: For implementing machine learning algorithms (Decision Trees and Random Forests).
 <br>
 <br>
 
@@ -627,7 +628,7 @@ The initial phases involved cleaning and preparation of the datasets.
   ```
 <br>
   
-Detecting and addressing missing data values in both datasets.
+The above code finds missing data values in the `df_melbourne_housing` datasets and fills in a placeholder value.
 <br>
 <br>
 
@@ -643,7 +644,7 @@ Detecting and addressing missing data values in both datasets.
    ```
 <br>
 
-Selecting relevant features and transforming data types for effective modeling using methods discussed.
+Selecting relevant features and transforming data types for a more accurate model.
 <br>
 <br>  
 
@@ -651,7 +652,7 @@ Selecting relevant features and transforming data types for effective modeling u
 
 <br>  
 
-Conducting an in-depth EDA provided essential insights into both datasets:
+I explore the datasets in-depth and created visualizations to illustrate the models used effectively.
 <br>  
 
 - **Species Distribution in Iris Dataset**
@@ -683,7 +684,7 @@ A bar chart visualization to understand the distribution of different Iris speci
     ```
     
 <br>  
-The boxplot analysis provides a comprehensive visual comparison of the distribution of features like petal and sepal dimensions across different Iris species. 
+The boxplot analysis provides a visual comparison of the distribution of features like petal and sepal dimensions across different Iris species. 
 
 <br>
 
@@ -691,7 +692,7 @@ The boxplot analysis provides a comprehensive visual comparison of the distribut
 <br>
 <br>
 
-- **Correlation of Features in Iris on a Scatter Plot**
+- **Scatter Plot Analysis of Sepal Features**
     ```python
    iris_X = df_iris[['SepalLengthCm','SepalWidthCm']].values
    # Converts species names to numbers
@@ -701,7 +702,7 @@ The boxplot analysis provides a comprehensive visual comparison of the distribut
     ```
     
 <br>  
-This visualization showcases how Iris species features are correlated using a scatter plot.
+This scatter plot visualizes the relationship between Sepal Length and Sepal Width in the Iris dataset, with different colors representing different species.
 
 <br>
 <br>
@@ -716,7 +717,7 @@ This visualization showcases how Iris species features are correlated using a sc
 <br>
 <br>
 
-- **Decision Tree Visualization Using all Features of Iris**
+- **Decision Tree Visualization of Iris Dataset**
     ```python
    iris_classifier = DecisionTreeClassifier(max_depth=2, random_state = 36)
    
@@ -741,16 +742,16 @@ This visualization showcases how the decision tree algorithm classifies Iris spe
 
 <br>  
 
-This phase discusses the construction and assessment of predictive models used:
+This phase discusses the implementation of predictive models used:
 
 - **Iris Species Classification with Decision Trees:**  
    Developed decision tree models to accurately classify Iris species. This step involved tuning parameters and visualizing tree structures to understand the         decision pathways.  
 
 - **Predicting Melbourne Housing Prices Using Random Forests:**  
-   Applied Random Forest regression models to estimate housing prices. This included an analysis of feature importance and the aggregation of predictions from        multiple decision trees to improve accuracy and reduce overfitting.  
+   Applied Random Forest regression models to predict housing prices. This included an analysis of important features and the predictions from multiple decision       trees to improve accuracy and reduce overfitting.  
 
-- **Comprehensive Model Evaluation:**  
-   Evaluated the models using appropriate metrics. For the Iris dataset, accuracy score was used, while for the Melbourne housing data, mean absolute error (MAE)     provided insights into the model's prediction accuracy.  
+- **Model Evaluation:**  
+   Evaluated the models using appropriate metrics. For the Iris dataset, accuracy score was used, while for the Melbourne housing data, mean absolute error (MAE)     was used.  
 
 Each model's performance was analyzed to and compared to pre data processesing.  
 
@@ -759,18 +760,31 @@ Each model's performance was analyzed to and compared to pre data processesing.
 <br>  
 
 1. **New Machine Learning Knowledge**: The experience with Decision Trees and Random Forests improved my understanding of machine learning methods.  
-2. **Skill Improvement**: Improved skills in machine learning, data cleaning, and visualization techniques.  
+2. **Skill Improvement**: Improved skills in machine learning, data cleaning/analysis, and visualization techniques.  
 3. **Making Decisions with Data**: Developed skills in using data to inform decisions.    
-4. **Building a Research Foundation**: Foundation for further studies in predictive modeling and data analysis.    
+4. **Building a Research Foundation**: Foundation for future projects in predictive modeling.    
   
 <br>  
 <br>
 
 ### Skills Acquired
 
+<br>  
+
+1. **Improve Data Preprocessing**
+2. **New Data Visualization Techniques**
+3. **Gained an Understanding Of Predictive Modelling**
+   
+<br>  
+<br>
+
 ### Conclusion
 
-
+<br>  
+In this project, I practised using the techniques of Decision Trees and Random Forests, applying them to the Iris and Melbourne Housing datasets. The experience has been educational, improving my understanding of machine learning. These tools can provide real insights in diverse areas, from biology to real estate. This project has gave me the skills to make informed decisions and predictions using data.
+   
+<br>  
+<br>
 
 ## Contributors
 
