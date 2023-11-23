@@ -12,8 +12,7 @@ This repository displays my data science and machine learning projects, highligh
    - [Project 1: Daytime Heart Rate Insights to Predict Sleep Stages with Fitbit Data](#project-1-Daytime-Heart-Rate-Insights-to-Predict-Sleep-Stages-with-Fitbit-Data)
    - [Project 2: Predictive Analysis of Road Fatalities in Ireland](#project-2-predictive-analysis-of-road-fatalities-in-ireland)
    - [Project 3: Decision Trees and Random Forests in Practice](#project-3-decision-trees-and-random-forests-in-practice)
-4. [All Technologies Used](#all-technologies-used)
-5. [Contributors](#contributors)
+4. [Contributors](#contributors)
 
 ## Introduction
 
