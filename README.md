@@ -574,10 +574,10 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 <br>
 <br>
   
-## Project 3: Decision Tree Classifier for Iris Species and Predicting Housing Prices
+## Project 3: Decision Trees and Random Forests in Practice
 
 ### Description
-This project explores the application of decision tree classifiers on one datasets from the UCI Machine Learning Repository and another from Kaggle. Initially, it focuses on exploratory data analysis, including data cleaning, preprocessing, and feature engineering. The first part of the project involves classifying iris species by analyzing petal length and width. The project then transitions to the Melbourne real estate domain, applying decision tree methods to predict housing prices. This project demonstrates the practical application of decision trees and their adaptability in analyzing differnt types of data.
+In this project I explore two common datasets in data science, the Iris Species and Melbourne Housing Market datasets. The primary focus is on understanding Decision Trees and Random Forests, valuable tools in machine learning, in order to make predicitve models for each dataset. The project begins with cleaning and preprocessing the datasets, followed by an in-depth exploratory data analysis (EDA). I then apply Decision Trees for species classification in the Iris dataset and use regression for predicting housing prices using Random Forests in the Melbourne dataset. These distinctly different datasets highlights the versatility these methods can have in classification.
 
 
 ### Datasets Discussed
@@ -586,15 +586,25 @@ This project explores the application of decision tree classifiers on one datase
 <br>  
 
 *Melbourne Housing Market:* [Kaggle](https://www.kaggle.com/datasets/anthonypino/melbourne-housing-market)
+
+<br>  
+
+**Tutorials Used**
+*In Depth: Decision Trees and Random Forests:* [PythonDataScienceHandbook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.08-Random-Forests.ipynb)
+
 <br>
+
+*A Guide to Decision Trees for Beginners:* [Kaggle](https://www.kaggle.com/code/vipulgandhi/a-guide-to-decision-trees-for-beginners/notebook)
+
 <br>
     
-
 ### Technologies Used
 - Python: For programming, analysis, and modeling.
 - Pandas: For dataset manipulation.
 - Matplotlib: For data visualization and EDA.
 - Jupyter Notebook: As the development environment.
+- Numpy: Used for numerical computations 
+- Scikit-learn: Used for implementing machine learning algorithms, specifically Decision Trees and Random Forests.
 <br>
 <br>
 
@@ -602,61 +612,94 @@ This project explores the application of decision tree classifiers on one datase
 
 #### 1. Data Cleaning and Preprocessing
 
+<br>  
 
-      
-#### 2. Feature Engineering
+The initial phases involved cleaning and preparation of the datasets.  
+<br>
 
-- **Mapping Seasons To The Dataset**
+- **Handling Null Values**:
+
+  ```python
+   df_melbourne_housing['Car'].fillna(0, inplace = True)
+   df_melbourne_housing['CouncilArea'].fillna('Unavailable', inplace = True)
+   df_melbourne_housing['YearBuilt'].fillna("Unknown", inplace=True)
+   df_melbourne_housing['BuildingArea'].fillna(0, inplace = True)
+  ```
+<br>
+  
+Detecting and addressing missing data values in both datasets.
+<br>
+<br>
+
+- **Feature Selection and Data Transformation**
+  
+   ```python
+   melbourne_dataset_y = df_melbourne_housing.Price
+
+   # Keep only numerical predictors
+   melbourne_dataset_X = df_melbourne_housing.drop(['Price'], axis=1).select_dtypes(exclude=['object'])
+
+   df_iris.drop(columns=['Id'], inplace=True)
+   ```
+<br>
+
+Selecting relevant features and transforming data types for effective modeling using methods discussed.
+<br>
+<br>  
+
+#### 2. Exploratory Data Analysis (EDA)  
+
+<br>  
+
+Conducting an in-depth EDA provided essential insights into both datasets:
+<br>  
+
+- **Species Distribution in Iris Dataset**
     ```python
-    # Mapping each month to its season
-    seasons = {
-       'January': 'Winter', 'February': 'Winter', 'March': 'Spring',
-       'April': 'Spring', 'May': 'Spring', 'June': 'Summer',
-       'July': 'Summer', 'August': 'Summer', 'September': 'Autumn',
-       'October': 'Autumn', 'November': 'Autumn', 'December': 'Winter',
-       'Annual Fatalities': 'Annual'
-   }
-
-   # Creating a new column 'Season'
-   road_fatalities_2000_to_2023['Season'] = road_fatalities_2000_to_2023['Month'].map(seasons)
+      #Count of each iris species
+      df_iris['Species'].value_counts().plot(kind='bar')
+          
+      plt.xticks(rotation='horizontal')
+      plt.xlabel('Types of Iris')
+      plt.ylabel('Count')
+      plt.title('Total type of each iris species in dataset')
+      plt.show()
     ```
+    
+<br>  
+A bar chart visualization to understand the distribution of different Iris species.  
+
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_bar_graph.png)  
 <br>
 <br>
 
-Including a 'Season' column in the dataset provides insights into seasonal changes in road fatalities. It allows for the analysis of trends and patterns that may differ across seasons due to varying weather conditions, daylight hours, and driving behaviors.
+**Analysis from Visualization**
 <br>
 <br>
 
-**Road Fatalities Dataset With Season Column**  
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Seasons_Added.png)  
-   
+- **Visualization of Something**
+    ```python
+      sample python
+    ```
+   This code was used to generate a visualization showcasing sample.
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/)  
 <br>
 <br>
 
-#### 3. Exploratory Data Analysis (EDA)
-
-
+**Analysis from Visualization**
+<br>
 <br>
 
 ### Opportunities from the Project
 
-- Delve into the relationship between heart rate and sleep stages, offering insights into potential sleep stage predictions using Fitbit data.
-- Acquire hands-on experience with real-world datasets.
-- Improve understanding of time-series data.
-
 ### Skills Acquired
-
-- Better understanding of time-series data analysis.
-- Basic skills in data cleaning.
-- Feature engineering within date-time data.
-- Practise with visualization of time-series data.
 
 ### Conclusion
 
-I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
-The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
-Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
-Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
 
 
 ## Contributors
