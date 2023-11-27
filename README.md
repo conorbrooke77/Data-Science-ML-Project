@@ -660,7 +660,7 @@ The model provides a moderate level of accuracy in predicting road fatalities. H
 In this project, I used a range of data processing techniques to analyze and predict road fatalities in Ireland. Here’s a brief overview of these methods:
 
 ##### 1. Data Cleaning and Preprocessing
-- **Identifying and Removing Null Values**: I examined thedatasets for missing data. Where I found null values, I removed those rows to maintain data accuracy.
+- **Identifying and Removing Null Values**: I examined the datasets for missing data. Where I found null values, I removed those rows to maintain data accuracy.
 - **Column Renaming and Removal**: To enhance clarity, I renamed certain columns and removed irrelevant ones, focusing only on the necessary data.
 
 ##### 2. Merging Datasets
@@ -677,7 +677,7 @@ In this project, I used a range of data processing techniques to analyze and pre
 - **Linear Regression Model**: I used this model to forecast future road fatalities based on historical data. This involved transforming dates into a format suitable for the model and splitting the data into training and testing sets.
 - **Model Evaluation**: I assessed the model’s performance by comparing actual and predicted fatalities, aiming to refine the model for better accuracy.
 
-These techniques collectively aided in providing insightful analysis and predictions regarding road safety in Ireland.
+<br>  
 
 ### Opportunities from the Project
 
@@ -705,9 +705,8 @@ These techniques collectively aided in providing insightful analysis and predict
 
 ### Conclusion
 
-This project on road safety in Ireland has been educational. I started by tackling issues with the datasets, ensuring the data was clean and usable. Through analyzing road fatality data over several years, I developed a predictive model to forecast future trends. This model, initially based on linear regression, has potential for refinement and could be used for public awarness in road safety. The experience has improved my skills in data cleaning, analysis, and machine learning, and offered insights into the seasonal and monthly trends of road fatalities. Overall, the project not only improved my understanding of road safety in Ireland but also showcases the power of data science in making a real-world applications.
+This project on road safety in Ireland has been educational. I started by tackling issues with the datasets, ensuring the data was clean and usable. Through analyzing road fatality data over several years, I developed a predictive model to forecast future trends. This model, initially based on linear regression, has potential for refinement and could be used for public awarness in road safety. The experience has improved my skills in data cleaning, analysis, and machine learning, and offered insights into the seasonal and monthly trends of road fatalities. Overall, the project not only improved my understanding of road safety in Ireland but also showcases the power of data science in making a real-world application.
 
-<br>
 <br>
 <br>
   
