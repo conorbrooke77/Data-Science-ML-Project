@@ -577,7 +577,6 @@ The analysis of road fatalities in Ireland reveals a seasonal pattern, with July
 <br>
 
 ### Linear Regression Model for Predicting Road Fatalities in Ireland
-<br>
 <br>  
 
 #### Overview
@@ -604,7 +603,7 @@ This code creates a `Date` column by combining the `Month` and `Year` columns in
 
 #### Splitting the data into training and testing sets
 
-    ```python
+```python
     date_ordinals = model_data.index.map(pd.Timestamp.toordinal)
 
     X = date_ordinals.values.reshape(-1, 1)
@@ -612,7 +611,8 @@ This code creates a `Date` column by combining the `Month` and `Year` columns in
     y = model_data['Road Fatality Count']  # Target variable
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-    ```
+```
+
 <br>
 <br>
 
@@ -622,10 +622,11 @@ The code converts the datetime index to ordinal values for use as features in th
 
 #### Create and fit the model
 
-    ```python
+```python
     model = LinearRegression()
     model.fit(X_train, y_train)
-    ```
+```
+
 <br>
 <br>
 
