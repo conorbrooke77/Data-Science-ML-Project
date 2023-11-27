@@ -576,6 +576,82 @@ The analysis of road fatalities in Ireland reveals a seasonal pattern, with July
 <br>
 <br>
 
+### Linear Regression Model for Predicting Road Fatalities in Ireland
+<br>
+<br>  
+
+#### Overview
+The Linear Regression model used for predicting road fatalities in Ireland analyzes historical data to understand the relationship between time and fatality counts. It assumes a linear correlation, using time (year, month) as the predictor variable to forecast future fatalities, providing valuable insights for planning future improvements in road safety.
+<br>
+<br> 
+
+#### Feature Engineering
+
+- **Using DateTime on Linear Regression Model**
+    ```python
+    model_data = road_fatalities_2000_to_2023[road_fatalities_2000_to_2023['Month'] != 'Annual Fatalities']
+    model_data['Date'] = pd.to_datetime(model_data['Month'].astype(str) + ' ' + model_data['Year'].astype(str))
+
+    model_data.drop(columns=['Month', 'Year'], inplace=True)
+    model_data.set_index('Date', inplace=True)
+    ```
+<br>
+<br>
+
+This code creates a `Date` column by combining the `Month` and `Year` columns into a datetime format, removes the original `Month` and `Year` columns, and sets the newly formed `Date` column as the index of the `model_data`, effectively reformatting the data for time series modeling.
+<br>
+<br>  
+
+#### Splitting the data into training and testing sets
+
+    ```python
+    date_ordinals = model_data.index.map(pd.Timestamp.toordinal)
+
+    X = date_ordinals.values.reshape(-1, 1)
+
+    y = model_data['Road Fatality Count']  # Target variable
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+    ```
+<br>
+<br>
+
+The code converts the datetime index to ordinal values for use as features in the model, then assigns `road fatality counts` as the target variable, and splits the data into training and testing sets.
+<br>
+<br>  
+
+#### Create and fit the model
+
+    ```python
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+    ```
+<br>
+<br>
+
+This code initializes a Linear Regression model and then fits it to the training data (`X_train` and `y_train`), effectively training the model to understand the relationship between the dates and the road fatality counts.
+<br>
+<br>  
+
+**Comparison of Actual and Predicted Road Fatalities**  
+<br> 
+- **Visualization of Actual and Predicted Road Fatalities***
+    ```python
+    # Making predictions on the test set
+    test_predictions = model.predict(X_test)
+    plt.title('Comparison of Actual and Predicted Road Fatalities')
+    plt.xlabel('Index')
+    plt.ylabel('Number of Fatalities')
+    plt.show()
+    ```
+   This code was used to compare the Actual and Predicted Road Fatalities in Ireland.
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/predictions.png)  
+<br>
+<br>
+TThe model provides a moderate level of accuracy in predicting road fatalities. However, given the serious nature of the data, more refinement is needed to improve its precision and reliability.
+
 ### Data Processing Techniques
 
 The data, sourced from Fitbit (Fitabase), presented potential biases due to its limitation to 30 participants. The third-party nature of the collection method further raised issues. Addressing these challenges required several processing techniques:
