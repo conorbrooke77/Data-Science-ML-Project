@@ -554,19 +554,25 @@ The seasonal bar chart shows a consistent range of road fatalities in Ireland fr
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/heatmap-of-road-fatalities-by-month-and-year.png)  
 <br>
 <br>
+The analysis of road fatalities in Ireland reveals a seasonal pattern, with July averaging the highest fatalities at 23.46 and April the lowest at 18.46. Over the years, there's a clear downward trend in yearly mean fatalities, dropping from 34.58 in 2000 to around 12.5 in recent years (2021-2023). This suggests significant improvements in road safety with  contributing factors like ROA leading to fewer road fatalities in Ireland over time.
 <br>  
+<br> 
 
 **Histogram of all Road Fatalities in Ireland**  
 <br> 
-- **Visualization of the Monthly Trends of Road Fatalities in Ireland (2000 - 2023)**
+- **Visualization for a Histogram of all Road Fatalities in Ireland***
     ```python
-   filtered_data['Month'] = filtered_data['Month'].cat.remove_categories(['Annual Fatalities'])
-   monthly_fatalities = filtered_data.groupby('Month')['Road Fatality Count'].sum()
+    plt.figure(figsize=(10, 6))
+    plt.hist(copy_model_data['Road Fatality Count'], bins=45, edgecolor='black', alpha=0.7)
+    plt.title('Histogram of Road Fatalities')
+    plt.xlabel('Number of Fatalities')
+    plt.ylabel('Frequency')
+    plt.show()
     ```
-   This code was used to generate a visualization showcasing the Monthly Trend of Road Fatalities in Ireland (2000 - 2023).
+   This code was used to generate a visualization showcasing the a Histogram of all Road Fatalities in Ireland.
 <br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Monthly-Trend-of-Road-Fatalities-in-Ireland-2023.png)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/histogram.png)  
 <br>
 <br>
 
