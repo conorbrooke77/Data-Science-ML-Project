@@ -11,9 +11,8 @@ This repository displays my data science and machine learning projects, highligh
 3. [Project Portfolio](#project-portfolio)
    - [Project 1: Daytime Heart Rate Insights to Predict Sleep Stages with Fitbit Data](#project-1-Daytime-Heart-Rate-Insights-to-Predict-Sleep-Stages-with-Fitbit-Data)
    - [Project 2: Predictive Analysis of Road Fatalities in Ireland](#project-2-predictive-analysis-of-road-fatalities-in-ireland)
-   - [Project 3: Rugby World Cup (RWC) Match Outcome Predictions & Player Statistics](#project-3-rugby-world-cup-match-outcome-predictions-&-player-statistics)
-4. [All Technologies Used](#all-technologies-used)
-5. [Contributors](#contributors)
+   - [Project 3: Decision Trees and Random Forests in Practice](#project-3-decision-trees-and-random-forests-in-practice)
+4. [Contributors](#contributors)
 
 ## Introduction
 
@@ -277,11 +276,11 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 *I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables. So instead, I have started a new project entirely with 'Iteration 2*
 
 ### Description
-This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland. 
+This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to analyses the patterns and trends of road fatality in Ireland. 
 
 The two datasets used in this project are ROA11 and ROA29, by analysing this data, a predictive model in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by feature engineering and exploratory data analysis (EDA), where the data will be further analysed and engineered.
 
-The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
+The predictive model developed will be expected to use the basic Linear Regression Model approach, which finds the best fit linear line between the independent and dependent variable. This model can be changed to SARIMA in the future as its better suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
 
 
 ### Datasets Discussed
@@ -311,6 +310,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Pandas: For dataset manipulation.
 - Matplotlib: For data visualization and EDA.
 - Jupyter Notebook: As the development environment.
+- Scikit-learn: For implementing machine learning model
 <br>
 <br>
 
@@ -425,6 +425,7 @@ Including a 'Season' column in the dataset provides insights into seasonal chang
     ```
    This code was used to generate a visualization showcasing the Yearly Trend of Road Fatalities in Ireland (2000 - 2022).
 <br>
+<br>
 
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Yearly-Trend-of-Road-Fatalities-in-Ireland-2022.png)  
 <br>
@@ -521,7 +522,36 @@ The mean data shown in the second graph indicates on average a decrease in 60 fa
 The seasonal bar chart shows a consistent range of road fatalities in Ireland from 2000 to 2023, with a mean of 1459. The standard deviation of 55.97 suggests moderate variability within seasons. This stability in seasonal patterns could be crucial for predicting future trends for road fatalities in Ireland.
 
 <br>
-   
+<br>  
+
+**Monthly Trends Analysis**  
+<br> 
+- **Visualization of the Monthly Trends of Road Fatalities in Ireland (2000 - 2023)**
+    ```python
+   filtered_data['Month'] = filtered_data['Month'].cat.remove_categories(['Annual Fatalities'])
+   monthly_fatalities = filtered_data.groupby('Month')['Road Fatality Count'].sum()
+    ```
+   This code was used to generate a visualization showcasing the Monthly Trend of Road Fatalities in Ireland (2000 - 2023).
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Monthly-Trend-of-Road-Fatalities-in-Ireland-2023.png)  
+<br>
+<br>
+<br>
+**Heatmap of Road Fatalities by Month and Year**  
+<br> 
+- **Visualization using Heatmap of Road Fatalities by Month and Year**
+    ```python
+   heatmap_data = copy_model_data.pivot_table(index='Year', columns='Month', values='Road Fatality Count', aggfunc='sum')
+   plt.title('Heatmap of Road Fatalities by Month and Year')
+   plt.ylabel('Year')
+   plt.xlabel('Month')
+   plt.show()
+    ```
+   This code was used to generate a visualization showcasing a heatmap of road fatalities in Ireland by month and year.
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/heatmap-of-road-fatalities-by-month-and-year.png)  
 <br>
 <br>
 
@@ -577,7 +607,7 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 ## Project 3: Decision Trees and Random Forests in Practice
 
 ### Description
-In this project I explore two common datasets in data science, the Iris Species and Melbourne Housing Market datasets. The primary focus is on understanding Decision Trees and Random Forests, valuable tools in machine learning, in order to make predicitve models for each dataset. The project begins with cleaning and preprocessing the datasets, followed by an in-depth exploratory data analysis (EDA). I then apply Decision Trees for species classification in the Iris dataset and use regression for predicting housing prices using Random Forests in the Melbourne dataset. These distinctly different datasets highlights the versatility these methods can have in classification.
+In this project I analyse two datasets used commonly in practicing data science, the Iris Species and Melbourne Housing Market datasets. The primary focus is on understanding Decision Trees and Random Forests, valuable tools in machine learning, in order to make predicitve models for each dataset. The project includes cleaning and preprocessing the datasets, followed by an in-depth exploratory data analysis (EDA). I apply Decision Trees for species classification in the Iris dataset and use regression for predicting housing prices using Random Forests in the Melbourne dataset. These distinctly different datasets highlights the versatility these methods can have in classification.
 
 
 ### Datasets Discussed
@@ -589,7 +619,8 @@ In this project I explore two common datasets in data science, the Iris Species 
 
 <br>  
 
-**Tutorials Used**
+**Tutorials Used**  
+
 *In Depth: Decision Trees and Random Forests:* [PythonDataScienceHandbook](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.08-Random-Forests.ipynb)
 
 <br>
@@ -604,7 +635,7 @@ In this project I explore two common datasets in data science, the Iris Species 
 - Matplotlib: For data visualization and EDA.
 - Jupyter Notebook: As the development environment.
 - Numpy: Used for numerical computations 
-- Scikit-learn: Used for implementing machine learning algorithms, specifically Decision Trees and Random Forests.
+- Scikit-learn: For implementing machine learning algorithms (Decision Trees and Random Forests).
 <br>
 <br>
 
@@ -627,7 +658,7 @@ The initial phases involved cleaning and preparation of the datasets.
   ```
 <br>
   
-Detecting and addressing missing data values in both datasets.
+The above code finds missing data values in the `df_melbourne_housing` datasets and fills in a placeholder value.
 <br>
 <br>
 
@@ -643,7 +674,7 @@ Detecting and addressing missing data values in both datasets.
    ```
 <br>
 
-Selecting relevant features and transforming data types for effective modeling using methods discussed.
+Selecting relevant features and transforming data types for a more accurate model.
 <br>
 <br>  
 
@@ -651,56 +682,139 @@ Selecting relevant features and transforming data types for effective modeling u
 
 <br>  
 
-Conducting an in-depth EDA provided essential insights into both datasets:
+I explore the datasets in-depth and created visualizations to illustrate the models used effectively.
 <br>  
 
 - **Species Distribution in Iris Dataset**
     ```python
-      #Count of each iris species
-      df_iris['Species'].value_counts().plot(kind='bar')
-          
-      plt.xticks(rotation='horizontal')
-      plt.xlabel('Types of Iris')
-      plt.ylabel('Count')
-      plt.title('Total type of each iris species in dataset')
-      plt.show()
+   #Count of each iris species
+   df_iris['Species'].value_counts().plot(kind='bar')
+       
+   plt.xticks(rotation='horizontal')
+   plt.xlabel('Types of Iris')
+   plt.ylabel('Count')
+   plt.title('Total type of each iris species in dataset')
+   plt.show()
     ```
     
 <br>  
 A bar chart visualization to understand the distribution of different Iris species.  
 
 <br>
-
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_bar_graph.png)  
-<br>
 <br>
 
-**Analysis from Visualization**
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_bar_graph.png)  
 <br>
 <br>
 
-- **Visualization of Something**
+- **Boxplot Analysis by Iris Species**
     ```python
-      sample python
+   df_iris.drop("Id", axis=1).boxplot(by = "Species", figsize = (6, 6))
+   plt.show()
     ```
-   This code was used to generate a visualization showcasing sample.
+    
+<br>  
+The boxplot analysis provides a visual comparison of the distribution of features like petal and sepal dimensions across different Iris species. 
+
 <br>
 
-   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/)  
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/boxplot_graph.png)  
 <br>
 <br>
 
-**Analysis from Visualization**
+- **Scatter Plot Analysis of Sepal Features**
+    ```python
+   iris_X = df_iris[['SepalLengthCm','SepalWidthCm']].values
+   # Converts species names to numbers
+   iris_y = df_iris['Species'].factorize()[0] 
+   plt.scatter(iris_X[:, 0], iris_X[:, 1], c=iris_y, cmap='rainbow')
+   plt.show
+    ```
+    
+<br>  
+This scatter plot visualizes the relationship between Sepal Length and Sepal Width in the Iris dataset, with different colors representing different species.
+
 <br>
 <br>
+
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph.png)  
+<br>
+
+<br>
+<br>
+
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_scatter_graph_improved.png)  
+<br>
+<br>
+
+- **Decision Tree Visualization of Iris Dataset**
+    ```python
+   iris_classifier = DecisionTreeClassifier(max_depth=2, random_state = 36)
+   
+   fourD_X = df_iris[['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm']]
+   new_Y = df_iris.Species
+   
+   iris_classifier.fit(fourD_X, new_Y)
+    ```
+    
+<br>  
+This visualization showcases how the decision tree algorithm classifies Iris species based on sepal length and width, illustrating the decision-making process at each node.
+
+<br>
+<br>
+
+![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/iris_decision_tree.png)  
+<br>
+<br>
+
+
+#### 3. Model Building and Evaluation  
+
+<br>  
+
+This phase discusses the implementation of predictive models used:
+
+- **Iris Species Classification with Decision Trees:**  
+   Developed decision tree models to accurately classify Iris species. This step involved tuning parameters and visualizing tree structures to understand the         decision pathways.  
+
+- **Predicting Melbourne Housing Prices Using Random Forests:**  
+   Applied Random Forest regression models to predict housing prices. This included an analysis of important features and the predictions from multiple decision       trees to improve accuracy and reduce overfitting.  
+
+- **Model Evaluation:**  
+   Evaluated the models using appropriate metrics. For the Iris dataset, accuracy score was used, while for the Melbourne housing data, mean absolute error (MAE)     was used.  
+
+Each model's performance was analyzed to and compared to pre data processesing.  
 
 ### Opportunities from the Project
 
+<br>  
+
+1. **New Machine Learning Knowledge**: The experience with Decision Trees and Random Forests improved my understanding of machine learning methods.  
+2. **Skill Improvement**: Improved skills in machine learning, data cleaning/analysis, and visualization techniques.  
+3. **Making Decisions with Data**: Developed skills in using data to inform decisions.    
+4. **Building a Research Foundation**: Foundation for future projects in predictive modeling.    
+  
+<br>  
+<br>
+
 ### Skills Acquired
+
+<br>  
+
+1. **Improve Data Preprocessing**
+2. **New Data Visualization Techniques**
+3. **Gained an Understanding Of Predictive Modelling**
+   
+<br>  
+<br>
 
 ### Conclusion
 
-
+<br>  
+In this project, I practised using the techniques of Decision Trees and Random Forests, applying them to the Iris and Melbourne Housing datasets. The experience has been educational, improving my understanding of machine learning. These tools can provide real insights in diverse areas, from biology to real estate. This project has gave me the skills to make informed decisions and predictions using data.
+   
+<br>  
+<br>
 
 ## Contributors
 
