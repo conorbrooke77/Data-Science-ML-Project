@@ -651,52 +651,59 @@ This code initializes a Linear Regression model and then fits it to the training
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/predictions.png)  
 <br>
 <br>
-TThe model provides a moderate level of accuracy in predicting road fatalities. However, given the serious nature of the data, more refinement is needed to improve its precision and reliability.
+The model provides a moderate level of accuracy in predicting road fatalities. However, given the serious nature of the data, more refinement is needed to improve its precision and reliability.
 
 ### Data Processing Techniques
 
-The data, sourced from Fitbit (Fitabase), presented potential biases due to its limitation to 30 participants. The third-party nature of the collection method further raised issues. Addressing these challenges required several processing techniques:
+In this project, I used a range of data processing techniques to analyze and predict road fatalities in Ireland. Here’s a brief overview of these methods:
 
-- Datetime formatting was changed for consistency.
-- Heart rate data had to be resampling to a minute granularity, reducing the dataset's size for manageability.
-- Feature engineering split date and time for clearer time-series data interpretation.
-- Data cleaning saw the removal of non-essential columns and renaming for clarity e.g, logid column which had inconsistent data and didn't correlate across datasets.
+##### 1. Data Cleaning and Preprocessing
+- **Identifying and Removing Null Values**: I examined thedatasets for missing data. Where I found null values, I removed those rows to maintain data accuracy.
+- **Column Renaming and Removal**: To enhance clarity, I renamed certain columns and removed irrelevant ones, focusing only on the necessary data.
+
+##### 2. Merging Datasets
+- **Aligning and Combining Data**: I aligned key columns across different datasets and merged them into a single dataset for better analysis.
+
+##### 3. Feature Engineering
+- **Season Mapping**: I added a 'Season' column by associating each month with its corresponding season. This helps analyze the impact of different seasons on road fatalities.
+
+##### 4. Exploratory Data Analysis (EDA)
+- **Visualization**: I employed various visualization techniques like line graphs, bar charts, and heatmaps to uncover patterns and trends in the data.
+- **Statistical Analysis**: I calculated key statistics like mean, median, and standard deviation to understand the data distribution.
+
+##### 5. Predictive Modeling
+- **Linear Regression Model**: I used this model to forecast future road fatalities based on historical data. This involved transforming dates into a format suitable for the model and splitting the data into training and testing sets.
+- **Model Evaluation**: I assessed the model’s performance by comparing actual and predicted fatalities, aiming to refine the model for better accuracy.
+
+These techniques collectively aided in providing insightful analysis and predictions regarding road safety in Ireland.
 
 ### Opportunities from the Project
 
-- Delve into the relationship between heart rate and sleep stages, offering insights into potential sleep stage predictions using Fitbit data.
-- Acquire hands-on experience with real-world datasets.
-- Improve understanding of time-series data.
+#### 1. Improve Road Safety Policies
+- **Data-Driven Decision Making**: The insights from the predictive model can inform the public to create more effective road safety strategies.
+#### 2. Public Awareness
+- **Community Engagement**: The findings of this project can be used in public awareness campaigns to educate drivers, pedestrians, and cyclists about road safety. 
+#### 4. Personal Skill Development
+- **Improvements in Analytical Skills**: Working on this project offers a significant opportunity to improve data analysis and predictive modeling skills. It involves using techniques in data cleaning, feature engineering, and exploratory data analysis (EDA), which are crucial for any data science project.
 
 ### Skills Acquired
 
-- Better understanding of time-series data analysis.
-- Basic skills in data cleaning.
-- Feature engineering within date-time data.
-- Practise with visualization of time-series data.
+- **Improved Data Preprocessing**: Gained skills in data cleaning and preprocessing techniques, ensuring data quality for accurate analysis.
+
+- **Exploratory Data Analysis (EDA)**: Acquired skills in conducting EDA, finding patterns and trends important for data interpretation.
+
+- **Machine Learning Model Implementation**: Learned to implement machine learning models, such as Linear Regression, for predictive analysis.
+
+- **Data Visualization**: New abilities in creating informative visualizations, providing better understandings of datasets.
 
 ### Challenges Faced
 
-- Merging posed challenges due to the extensive dataset sizes, had many problems finding ways to merge data beneficially while staying coherent.
-- Due to merging challenges and the limited number of participants, establishing a connection between the heart rate and sleep stages data proved to be incredibly frustrating.
-- The MinuteSleep data was hard to differentiate between daytime and nighttime hours, making it either inaccurate or I struggled to interpret it correctly.
-- Formatting on the steps data was also a challenge to interpret, along with having what seemed like a pointless column.
-- Differing granularities between datasets causing resampling of datasets.
-- The dataset's potential biases came from a limited participant count and third-party collection methods, eventhough datasets are large the data stays quite consistent.
-- The MinuteSleep data, based on the percentage analysis, is inconsistent and inaccurate. This has led to challenges in interpreting the data correctly.
-- In-depth analysis of sleep stages showed that users spent an unusually high percentage of time being "Awake", raising concerns about the reliability of this dataset.
-
-### Conceptual Hurdles
-
-- Have to get a better grasp on the aspects influencing sleep stages.
-- Understading the relationship between heart rate and sleep aswell as physical activity on sleep, especially considering the inconsistencies present in the sleep data.
+- **Interpreting Data Trends**: Understanding and interpreting the trends found in road fatality data, presented difficulties that required analysis outside of the dataset itself.
+- **Effective Exploratory Data Analysis (EDA)**: One of the key challenges was to identify and extract meaningful insights from the dataset. It involved deciding which data points were important for the analysis and which were not, ensuring that the EDA focused on the most relevant information for predicting future road fatalities.
 
 ### Conclusion
 
-I tried to use Fitbit data to understand sleep patterns. But I ran into problems.
-The main issue was with the `minuteSleep` dataset. It didn't seem right. For example, it showed that users were "Awake" a lot more than expected. This makes us question if the data is good or not. The `minuteSteps` dataset also didn't have enough useful data to re-orintate the goal to a prediction using physical activity.
-Because of these issues, I might need to change my approach. Maybe I'll look at the data hour by hour next time. Or use a totally different dataset.
-Even though I faced challenges, I learned a lot. I found out how important it is to double-check my data. I hope to find better dataset for the second iteration.
+This project on road safety in Ireland has been educational. I started by tackling issues with the datasets, ensuring the data was clean and usable. Through analyzing road fatality data over several years, I developed a predictive model to forecast future trends. This model, initially based on linear regression, has potential for refinement and could be used for public awarness in road safety. The experience has improved my skills in data cleaning, analysis, and machine learning, and offered insights into the seasonal and monthly trends of road fatalities. Overall, the project not only improved my understanding of road safety in Ireland but also showcases the power of data science in making a real-world applications.
 
 <br>
 <br>
