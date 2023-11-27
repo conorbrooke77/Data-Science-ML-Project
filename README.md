@@ -276,11 +276,11 @@ Even though I faced challenges, I learned a lot. I found out how important it is
 *I understand that 'Iteration 2' is intended to build upon 'Iteration 1', however, issues and inconsistencies within the datasets used in the initial project has prevented any conclusive findings for predicting sleep stages for Fitbit wearables. So instead, I have started a new project entirely with 'Iteration 2*
 
 ### Description
-This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to find patterns and trends that can help estimate future road fatality in Ireland. 
+This project revolves around the issue of road safety, aiming to analyse each dataset and develop a model to predict road fatalities in Ireland. The datasets were gathered from the Central Statistics Office of Ireland under the Road Safety Statistics data table. Combined accross both datasets is the road fatality data that spans from January 2000 to October 2023, the objective is to analyses the patterns and trends of road fatality in Ireland. 
 
 The two datasets used in this project are ROA11 and ROA29, by analysing this data, a predictive model in road fatalities can be developed. The project will implement techniques like data cleaning and preprocessing, making sure the data is ready for analysis. This will also be followed by feature engineering and exploratory data analysis (EDA), where the data will be further analysed and engineered.
 
-The predictive model developed will be expected to use the SARIMA approach, a statistical model used to forecast future values by including non-seasonal and seasonal trends. This method is well suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
+The predictive model developed will be expected to use the basic Linear Regression Model approach, which finds the best fit linear line between the independent and dependent variable. This model can be changed to SARIMA in the future as its better suited for the time series data of the ROA11 and ROA29 datasets. The project's expected outcome is a model based on analyse of Irelands road fatalities that could help improve road safety planning. This project's audience is for anyone wanting to make a difference using data, including policymakers, road safety analysts, or the Irish public interested in road safety trends.
 
 
 ### Datasets Discussed
@@ -310,6 +310,7 @@ current_road_fatalities_monthly = pd.read_csv("ROA29.20231122T121128.csv")
 - Pandas: For dataset manipulation.
 - Matplotlib: For data visualization and EDA.
 - Jupyter Notebook: As the development environment.
+- Scikit-learn: For implementing machine learning model
 <br>
 <br>
 
@@ -521,7 +522,36 @@ The mean data shown in the second graph indicates on average a decrease in 60 fa
 The seasonal bar chart shows a consistent range of road fatalities in Ireland from 2000 to 2023, with a mean of 1459. The standard deviation of 55.97 suggests moderate variability within seasons. This stability in seasonal patterns could be crucial for predicting future trends for road fatalities in Ireland.
 
 <br>
-   
+<br>  
+
+**Monthly Trends Analysis**  
+<br> 
+- **Visualization of the Monthly Trends of Road Fatalities in Ireland (2000 - 2023)**
+    ```python
+   filtered_data['Month'] = filtered_data['Month'].cat.remove_categories(['Annual Fatalities'])
+   monthly_fatalities = filtered_data.groupby('Month')['Road Fatality Count'].sum()
+    ```
+   This code was used to generate a visualization showcasing the Monthly Trend of Road Fatalities in Ireland (2000 - 2023).
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Monthly-Trend-of-Road-Fatalities-in-Ireland-2023.png)  
+<br>
+<br>
+<br>
+**Heatmap of Road Fatalities by Month and Year**  
+<br> 
+- **Visualization using Heatmap of Road Fatalities by Month and Year**
+    ```python
+   heatmap_data = copy_model_data.pivot_table(index='Year', columns='Month', values='Road Fatality Count', aggfunc='sum')
+   plt.title('Heatmap of Road Fatalities by Month and Year')
+   plt.ylabel('Year')
+   plt.xlabel('Month')
+   plt.show()
+    ```
+   This code was used to generate a visualization showcasing a heatmap of road fatalities in Ireland by month and year.
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/heatmap-of-road-fatalities-by-month-and-year.png)  
 <br>
 <br>
 
