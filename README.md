@@ -554,6 +554,21 @@ The seasonal bar chart shows a consistent range of road fatalities in Ireland fr
    ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/heatmap-of-road-fatalities-by-month-and-year.png)  
 <br>
 <br>
+<br>  
+
+**Histogram of all Road Fatalities in Ireland**  
+<br> 
+- **Visualization of the Monthly Trends of Road Fatalities in Ireland (2000 - 2023)**
+    ```python
+   filtered_data['Month'] = filtered_data['Month'].cat.remove_categories(['Annual Fatalities'])
+   monthly_fatalities = filtered_data.groupby('Month')['Road Fatality Count'].sum()
+    ```
+   This code was used to generate a visualization showcasing the Monthly Trend of Road Fatalities in Ireland (2000 - 2023).
+<br>
+
+   ![alt text](https://github.com/conorbrooke77/Data-Science-ML-Project/blob/main/Resources/Monthly-Trend-of-Road-Fatalities-in-Ireland-2023.png)  
+<br>
+<br>
 
 ### Data Processing Techniques
 
